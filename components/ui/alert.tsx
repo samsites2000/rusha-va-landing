@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils'; // Assuming you have a `cn` utility from shadcn/ui
 
 import {
@@ -73,14 +72,9 @@ const GradientAlert = React.forwardRef<HTMLDivElement, GradientAlertProps>(
     if (!variant) return null;
 
     return (
-      <motion.div
+      <div
         ref={ref}
         role="alert"
-        // Animation props for enter and exit
-        initial={{ opacity: 0, x: 50, scale: 0.9 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
-        exit={{ opacity: 0, x: 50, transition: { duration: 0.2 } }}
-        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
         className={cn(alertVariants({ variant }), className)}
         {...props}
       >
@@ -111,7 +105,7 @@ const GradientAlert = React.forwardRef<HTMLDivElement, GradientAlertProps>(
             <X className="h-4 w-4" />
           </button>
         )}
-      </motion.div>
+      </div>
     );
   }
 );

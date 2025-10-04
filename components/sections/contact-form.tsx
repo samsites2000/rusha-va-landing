@@ -1,39 +1,16 @@
 'use client'
 
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { motion } from 'framer-motion'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Badge } from '@/components/ui/badge'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import {
   Mail,
   Phone,
   MapPin,
   Clock,
   CheckCircle,
-  AlertCircle,
-  Send,
-  Building,
-  User,
-  MessageSquare,
   Shield,
   Award,
   Zap
 } from 'lucide-react'
-
-import { contactFormSchema, serviceOptions, budgetOptions, type ContactFormData } from '@/lib/validations/contact'
-import { analytics } from '@/lib/analytics'
 
 const contactInfo = [
   {
@@ -62,70 +39,7 @@ const contactInfo = [
   }
 ]
 
-const trustIndicators = [
-  { icon: Shield, text: 'SSL Secured' },
-  { icon: Award, text: 'ISO Certified' },
-  { icon: Zap, text: 'Fast Response' },
-  { icon: CheckCircle, text: 'Satisfaction Guaranteed' }
-]
-
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors, isValid },
-    reset
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-    mode: 'onChange'
-  })
-
-
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-
-    // Track form completion
-    analytics.contactFormCompleted({
-      service: data.service,
-      budget: data.budget,
-      hasPhone: !!data.phone,
-      hasCompany: !!data.company
-    })
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-
-      const result = await response.json()
-      console.log('Form submitted successfully:', result)
-
-      setSubmitStatus('success')
-      analytics.track('Contact Form Success', {
-        email_ids: result.emailIds
-      })
-      reset()
-    } catch (error) {
-      console.error('Form submission error:', error)
-      setSubmitStatus('error')
-      analytics.contactFormFailed(error instanceof Error ? error.message : 'Unknown error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <section className="py-20 bg-gray-50">

@@ -21,7 +21,7 @@ export default function GradientAlertDemo() {
     const newAlert: AlertItem = {
       id: generateId(),
       variant: variant,
-      title: variant?.charAt(0).toUpperCase() + variant?.slice(1)!,
+      title: variant ? variant.charAt(0).toUpperCase() + variant.slice(1) : 'Alert',
       description: 'Anyone with a link can now view this file.',
     };
     setAlerts(prevAlerts => [newAlert, ...prevAlerts]);

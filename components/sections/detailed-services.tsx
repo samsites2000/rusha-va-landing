@@ -2,8 +2,6 @@
 
 import React, { Dispatch, SetStateAction, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiBarChart, FiBell, FiDollarSign, FiPlay, FiBriefcase } from "react-icons/fi";
-import { IconType } from "react-icons";
 
 // Custom hook for window size
 function useWindowSize() {
