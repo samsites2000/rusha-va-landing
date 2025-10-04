@@ -181,28 +181,28 @@ const items = [
   {
     id: 1,
     title: "Business Support",
-    imgSrc: "/images/services/business-support.svg",
+    imgSrc: "/images/services/man 1.jpg",
     description:
       "Comprehensive administrative support, data management, and project coordination. Streamline your operations and free up time for strategic growth with our expert UK-based team.",
   },
   {
     id: 2,
     title: "Digital Marketing",
-    imgSrc: "/images/services/digital-marketing.svg",
+    imgSrc: "/images/services/lady.jpg",
     description:
       "Data-driven digital marketing strategies that build your brand and drive measurable results. From social media management to SEO optimization, we help you reach your target audience effectively.",
   },
   {
     id: 3,
     title: "Grant Consultancy",
-    imgSrc: "/images/services/grant-consultancy.svg",
+    imgSrc: "/images/services/lady 3.jpg",
     description:
       "Expert grant application and funding consultancy services. We help secure the capital needed for business expansion through comprehensive research, professional applications, and ongoing support.",
   },
   {
     id: 4,
     title: "Custom Solutions",
-    imgSrc: "/images/services/custom-solutions.svg",
+    imgSrc: "/images/services/lady 2.jpg",
     description:
       "Tailored virtual assistance solutions designed specifically for your unique business needs. From specialized workflows to industry-specific requirements, we create custom strategies for your success.",
   },

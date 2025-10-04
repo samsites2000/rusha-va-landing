@@ -154,77 +154,77 @@ export function ServicesParallax() {
     {
       title: "Business Support",
       link: "#business-support",
-      thumbnail: "/images/services/business-support.svg",
+      thumbnail: "/images/grey hands.png",
     },
     {
       title: "Digital Marketing",
       link: "#digital-marketing",
-      thumbnail: "/images/services/digital-marketing.svg",
+      thumbnail: "/images/Rusha working.png",
     },
     {
       title: "Grant Consultancy",
       link: "#grant-consultancy",
-      thumbnail: "/images/services/grant-consultancy.svg",
+      thumbnail: "/images/blue hands.png",
     },
     {
       title: "Project Management",
       link: "#project-management",
-      thumbnail: "/images/services/custom-solutions.svg",
+      thumbnail: "/images/blue.png",
     },
     {
       title: "Customer Service",
       link: "#customer-service",
-      thumbnail: "/images/services/business-support.svg",
+      thumbnail: "/images/green.png",
     },
     {
       title: "Social Media Management",
       link: "#social-media",
-      thumbnail: "/images/services/digital-marketing.svg",
+      thumbnail: "/images/grey.png",
     },
     {
       title: "Content Creation",
       link: "#content-creation",
-      thumbnail: "/images/services/grant-consultancy.svg",
+      thumbnail: "/images/mustard.png",
     },
     {
       title: "SEO Optimization",
       link: "#seo",
-      thumbnail: "/images/services/custom-solutions.svg",
+      thumbnail: "/images/mustard hands.png",
     },
     {
       title: "Email Marketing",
       link: "#email-marketing",
-      thumbnail: "/images/services/digital-marketing.svg",
+      thumbnail: "/images/green.png",
     },
     {
       title: "Data Entry",
       link: "#data-entry",
-      thumbnail: "/images/services/business-support.svg",
+      thumbnail: "/images/blue copy.png",
     },
     {
       title: "Research Services",
       link: "#research",
-      thumbnail: "/images/services/grant-consultancy.svg",
+      thumbnail: "/images/grey hands copy.png",
     },
     {
       title: "Administrative Support",
       link: "#admin-support",
-      thumbnail: "/images/services/business-support.svg",
+      thumbnail: "/images/grey hands.png",
     },
     {
       title: "Lead Generation",
       link: "#lead-generation",
-      thumbnail: "/images/services/digital-marketing.svg",
+      thumbnail: "/images/blue.png",
     },
     {
       title: "Financial Planning",
       link: "#financial-planning",
-      thumbnail: "/images/services/grant-consultancy.svg",
+      thumbnail: "/images/mustard.png",
     },
     {
       title: "Strategy Consulting",
       link: "#strategy",
-      thumbnail: "/images/services/custom-solutions.svg",
+      thumbnail: "/images/green.png",
     },
   ];
 

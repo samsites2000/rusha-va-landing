@@ -13,7 +13,7 @@ export function HeroSection() {
               <a href="#" title="" className="flex">
                 <img
                   className="w-auto h-16"
-                  src="/images/logo.svg"
+                  src="/images/Generated Image October 04, 2025 - 11_03AM.png"
                   alt="Rusha VA"
                 />
               </a>
