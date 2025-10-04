@@ -15,31 +15,31 @@ const serviceTestimonials: Testimonial[] = [
   {
     id: 1,
     name: "Swipe to see how we can help you",
-    icon: <HandIcon size={32} />,
+    backgroundImage: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/lee.jpg",
     description: "Discover our comprehensive virtual assistant services tailored to your business needs"
   },
   {
     id: 2,
     name: "Expert Business Support",
-    icon: <HandshakeIcon size={32} />,
+    backgroundImage: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/auntie.jpg",
     description: "Comprehensive administrative support, data management, and project coordination in real time. Every task handled with precision by our UK-based team."
   },
   {
     id: 3,
     name: "Data-Driven Marketing",
-    icon: <BarChart3Icon size={32} />,
+    backgroundImage: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/john.jpg",
     description: "Every marketing campaign includes detailed analytics and performance tracking. See real results with full transparency on ROI and engagement metrics."
   },
   {
     id: 4,
     name: "Focused Grant Success",
-    icon: <FileTextIcon size={32} />,
+    backgroundImage: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/random.jpg",
     description: "Target specific funding opportunities effortlessly with our grant consultancy expertise. We research, apply, and manage applications for maximum success rates."
   },
   {
     id: 5,
     name: "Seamless Communication",
-    icon: <MessageSquareIcon size={32} />,
+    backgroundImage: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/tony.jpg",
     description: "Transform your business communications into streamlined operations. From customer service to internal coordination, we make every interaction count."
   }
 ];
@@ -54,7 +54,7 @@ export function BrandStoryVideo() {
               {/* Testimonial Carousel */}
               <TestimonialCarousel
                 testimonials={serviceTestimonials}
-                showArrows={true}
+                showArrows={false}
                 showDots={true}
                 className="w-full"
               />

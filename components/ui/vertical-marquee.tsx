@@ -119,13 +119,11 @@ export default function CTAWithVerticalMarquee() {
               Ready to transform your business? Contact us for a free consultation and custom quote. We're here to help you succeed.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in-up [animation-delay:600ms]">
-              <button className="group relative px-6 py-3 bg-foreground text-background rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                <span className="relative z-10">CONTACT US NOW</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+              <button className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-orange-500 hover:bg-orange-600 focus:bg-orange-600">
+                CONTACT US NOW
               </button>
-              <button className="group relative px-6 py-3 bg-secondary text-secondary-foreground rounded-md font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg border border-border">
-                <span className="relative z-10">BOOK A CONSULTATION</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+              <button className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-orange-500 hover:bg-orange-600 focus:bg-orange-600">
+                BOOK A CONSULTATION
               </button>
             </div>
           </div>

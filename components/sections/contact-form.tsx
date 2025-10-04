@@ -184,12 +184,9 @@ export function ContactForm() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3">
-                <button className="w-full px-6 py-3 bg-indigo-600 text-white rounded-md font-medium transition-all duration-300 hover:bg-indigo-700 hover:shadow-lg">
-                  CONTACT US NOW
-                </button>
-                <button className="w-full px-6 py-3 bg-gray-100 text-gray-900 rounded-md font-medium transition-all duration-300 hover:bg-gray-200 hover:shadow-lg border border-gray-300">
-                  BOOK A CONSULTATION
+              <div className="flex flex-col gap-3 items-center">
+                <button className="inline-flex items-center justify-center px-4 py-4 text-sm font-semibold text-white transition-all duration-200 bg-orange-500 hover:bg-orange-600 focus:bg-orange-600 w-48">
+                  CONTACT ME NOW
                 </button>
               </div>
             </div>

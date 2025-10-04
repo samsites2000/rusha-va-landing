@@ -7,6 +7,7 @@ interface Testimonial {
   name: string
   avatar?: string
   icon?: React.ReactNode
+  backgroundImage?: string
   description: string
 }
 
@@ -71,11 +72,16 @@ const TestimonialCarousel = React.forwardRef<
                 key={testimonial.id}
                 className={cn(
                   "absolute w-full h-full rounded-2xl cursor-grab active:cursor-grabbing",
-                  "bg-white shadow-xl border border-gray-200",
+                  testimonial.backgroundImage ? "bg-cover bg-center" : "bg-white",
+                  "shadow-xl border border-gray-200",
                   isCurrentCard ? "shadow-2xl border-gray-300" : "shadow-lg border-gray-100",
                 )}
                 style={{
                   zIndex: isCurrentCard ? 3 : isPrevCard ? 2 : 1,
+                  backgroundImage: testimonial.backgroundImage ? `url(${testimonial.backgroundImage})` : undefined,
+                  backgroundSize: testimonial.backgroundImage ? 'cover' : undefined,
+                  backgroundPosition: testimonial.backgroundImage ? 'center' : undefined,
+                  backgroundRepeat: testimonial.backgroundImage ? 'no-repeat' : undefined,
                 }}
                 drag={isCurrentCard ? "x" : false}
                 dragConstraints={{ left: 0, right: 0 }}
@@ -111,24 +117,39 @@ const TestimonialCarousel = React.forwardRef<
                   </div>
                 )}
 
-                <div className="p-6 flex flex-col items-center gap-4">
-                  {testimonial.icon ? (
-                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                      {testimonial.icon}
+                {testimonial.backgroundImage && (
+                  <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 via-black/60 to-transparent rounded-b-2xl"></div>
+                )}
+                <div className="relative h-full flex flex-col justify-end p-4 pb-6">
+                  {!testimonial.backgroundImage && (
+                    <div className="flex-1 flex flex-col items-center justify-center gap-4">
+                      {testimonial.icon ? (
+                        <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                          {testimonial.icon}
+                        </div>
+                      ) : testimonial.avatar ? (
+                        <img
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+                      ) : null}
                     </div>
-                  ) : testimonial.avatar ? (
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                  ) : null}
-                  <h3 className="text-lg font-semibold text-gray-800 text-center">
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-center text-sm text-gray-600">
-                    {testimonial.description}
-                  </p>
+                  )}
+                  <div className="text-center">
+                    <h3 className={cn(
+                      "text-base font-semibold mb-1",
+                      testimonial.backgroundImage ? "text-white" : "text-gray-800"
+                    )}>
+                      {testimonial.name}
+                    </h3>
+                    <p className={cn(
+                      "text-xs",
+                      testimonial.backgroundImage ? "text-white" : "text-gray-600"
+                    )}>
+                      {testimonial.description}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             )

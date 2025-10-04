@@ -1,11 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Play } from 'lucide-react'
 
 export function HeroSection() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <div className="relative bg-gradient-to-b from-orange-50 to-orange-100">
@@ -15,30 +12,19 @@ export function HeroSection() {
             <div className="flex-shrink-0">
               <a href="#" title="" className="flex">
                 <img
-                  className="w-auto h-8"
-                  src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/2/logo.svg"
+                  className="w-auto h-16"
+                  src="https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/logo.png"
                   alt="Rusha VA"
                 />
               </a>
             </div>
 
-            <button
-              type="button"
-              className="inline-flex p-1 text-black transition-all duration-200 border border-black lg:hidden focus:bg-gray-100 hover:bg-gray-100"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
 
           </div>
         </div>
       </header>
 
-      <section className="py-10 sm:py-16 lg:py-24">
+      <section className="py-4 sm:py-6 lg:py-8">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <motion.div

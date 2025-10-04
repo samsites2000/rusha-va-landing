@@ -64,7 +64,6 @@ export const DetailedServices = () => {
               open={open}
               setOpen={setOpen}
               id={item.id}
-              Icon={item.Icon}
               title={item.title}
               imgSrc={item.imgSrc}
               description={item.description}
@@ -80,7 +79,6 @@ interface PanelProps {
   open: number;
   setOpen: Dispatch<SetStateAction<number>>;
   id: number;
-  Icon: IconType;
   title: string;
   imgSrc: string;
   description: string;
@@ -90,7 +88,6 @@ const Panel = ({
   open,
   setOpen,
   id,
-  Icon,
   title,
   imgSrc,
   description,
@@ -113,9 +110,6 @@ const Panel = ({
           {title}
         </span>
         <span className="block lg:hidden text-xl font-light text-black dark:text-white">{title}</span>
-        <div className="w-6 lg:w-full aspect-square bg-black text-white dark:bg-white dark:text-black grid place-items-center">
-          <Icon />
-        </div>
         <span
           className="w-4 h-4 bg-white group-hover:bg-gray-100 dark:bg-black dark:group-hover:bg-gray-900 transition-colors border-r-[1px] border-b-[1px] lg:border-b-0 lg:border-t-[1px] border-gray-200 dark:border-gray-800 rotate-45 absolute bottom-0 lg:bottom-[50%] right-[50%] lg:right-0 translate-y-[50%] translate-x-[50%] z-20"
         />
@@ -189,36 +183,32 @@ const items = [
   {
     id: 1,
     title: "Business Support",
-    Icon: FiBriefcase,
     imgSrc:
-      "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+      "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/man%201.jpg",
     description:
       "Comprehensive administrative support, data management, and project coordination. Streamline your operations and free up time for strategic growth with our expert UK-based team.",
   },
   {
     id: 2,
     title: "Digital Marketing",
-    Icon: FiBarChart,
     imgSrc:
-      "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+      "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/lady.jpg",
     description:
       "Data-driven digital marketing strategies that build your brand and drive measurable results. From social media management to SEO optimization, we help you reach your target audience effectively.",
   },
   {
     id: 3,
     title: "Grant Consultancy",
-    Icon: FiDollarSign,
     imgSrc:
-      "https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/lady%203.jpg",
     description:
       "Expert grant application and funding consultancy services. We help secure the capital needed for business expansion through comprehensive research, professional applications, and ongoing support.",
   },
   {
     id: 4,
     title: "Custom Solutions",
-    Icon: FiBell,
     imgSrc:
-      "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+      "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/lady%202.jpg",
     description:
       "Tailored virtual assistance solutions designed specifically for your unique business needs. From specialized workflows to industry-specific requirements, we create custom strategies for your success.",
   },

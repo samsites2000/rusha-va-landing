@@ -16,8 +16,8 @@ export default function Home() {
         startScale={0.4}
       />
       <ServicesParallax />
-      <BrandStoryVideo />
       <DetailedServices />
+      <BrandStoryVideo />
       <ContactForm />
       <Footer />
     </main>
