@@ -8,7 +8,7 @@ export function HeroSection() {
     <div className="relative bg-gradient-to-b from-orange-50 to-orange-100">
       <header>
         <div className="px-4 mx-auto sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-center lg:justify-between h-16 lg:h-20">
             <div className="flex-shrink-0">
               <a href="#" title="" className="flex">
                 <img
@@ -18,8 +18,6 @@ export function HeroSection() {
                 />
               </a>
             </div>
-
-
           </div>
         </div>
       </header>
@@ -31,6 +29,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="text-center lg:text-left"
             >
               <h1 className="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
                 Streamline Your Business with
@@ -44,7 +43,7 @@ export function HeroSection() {
                 From business support to digital marketing and grant consultancy - we handle the details so you can focus on growth. Expert UK-based virtual assistant services.
               </p>
 
-              <div className="mt-10 sm:flex sm:items-center sm:space-x-8">
+              <div className="mt-10 flex justify-center lg:justify-start sm:items-center sm:space-x-8">
                 <a
                   href="#contact"
                   title=""
@@ -53,7 +52,6 @@ export function HeroSection() {
                 >
                   Start exploring
                 </a>
-
               </div>
             </motion.div>
 

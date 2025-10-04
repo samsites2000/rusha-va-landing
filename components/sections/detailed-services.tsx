@@ -128,14 +128,18 @@ const Panel = ({
             }}
             className="w-full h-full overflow-hidden relative bg-black flex items-end"
           >
+            {/* Gradient overlay matching testimonial cards */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
+
             <motion.div
               variants={descriptionVariants}
               initial="closed"
               animate="open"
               exit="closed"
-              className="px-4 py-2 bg-black/40 backdrop-blur-sm text-white"
+              className="absolute bottom-0 left-0 right-0 px-6 py-4 z-10"
             >
-              <p>{description}</p>
+              <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
+              <p className="text-white/90 text-sm leading-relaxed">{description}</p>
             </motion.div>
           </motion.div>
         )}
