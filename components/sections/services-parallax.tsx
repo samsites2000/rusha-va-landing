@@ -154,77 +154,77 @@ export function ServicesParallax() {
     {
       title: "Business Support",
       link: "#business-support",
-      thumbnail: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/business-support.svg",
     },
     {
       title: "Digital Marketing",
       link: "#digital-marketing",
-      thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/digital-marketing.svg",
     },
     {
       title: "Grant Consultancy",
       link: "#grant-consultancy",
-      thumbnail: "https://images.unsplash.com/photo-1594736797933-d0fce9cf86a0?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/grant-consultancy.svg",
     },
     {
       title: "Project Management",
       link: "#project-management",
-      thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/custom-solutions.svg",
     },
     {
       title: "Customer Service",
       link: "#customer-service",
-      thumbnail: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/business-support.svg",
     },
     {
       title: "Social Media Management",
       link: "#social-media",
-      thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/digital-marketing.svg",
     },
     {
       title: "Content Creation",
       link: "#content-creation",
-      thumbnail: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/grant-consultancy.svg",
     },
     {
       title: "SEO Optimization",
       link: "#seo",
-      thumbnail: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c0d3?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/custom-solutions.svg",
     },
     {
       title: "Email Marketing",
       link: "#email-marketing",
-      thumbnail: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=400&fit=crop",
+      thumbnail: "/images/services/digital-marketing.svg",
     },
     {
       title: "Data Entry",
       link: "#data-entry",
-      thumbnail: "https://images.unsplash.com/photo-1502764613149-7f1d229e230f?w=500&h=500&fit=crop&crop=face",
+      thumbnail: "/images/services/business-support.svg",
     },
     {
       title: "Research Services",
       link: "#research",
-      thumbnail: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&h=500&fit=crop&crop=face",
+      thumbnail: "/images/services/grant-consultancy.svg",
     },
     {
       title: "Administrative Support",
       link: "#admin-support",
-      thumbnail: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=500&h=500&fit=crop&crop=face",
+      thumbnail: "/images/services/business-support.svg",
     },
     {
       title: "Lead Generation",
       link: "#lead-generation",
-      thumbnail: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=500&h=500&fit=crop&crop=face",
+      thumbnail: "/images/services/digital-marketing.svg",
     },
     {
       title: "Financial Planning",
       link: "#financial-planning",
-      thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=500&fit=crop&crop=face",
+      thumbnail: "/images/services/grant-consultancy.svg",
     },
     {
       title: "Strategy Consulting",
       link: "#strategy",
-      thumbnail: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=500&fit=crop&crop=face",
+      thumbnail: "/images/services/custom-solutions.svg",
     },
   ];
 

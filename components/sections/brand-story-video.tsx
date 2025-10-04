@@ -15,31 +15,31 @@ const serviceTestimonials: Testimonial[] = [
   {
     id: 1,
     name: "Swipe to see how we can help you",
-    backgroundImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=faces",
+    backgroundImage: "/images/testimonials/testimonial-1.svg",
     description: "Discover our comprehensive virtual assistant services tailored to your business needs"
   },
   {
     id: 2,
     name: "Expert Business Support",
-    backgroundImage: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=600&fit=crop&crop=faces",
+    backgroundImage: "/images/testimonials/testimonial-2.svg",
     description: "Comprehensive administrative support, data management, and project coordination in real time. Every task handled with precision by our UK-based team."
   },
   {
     id: 3,
     name: "Data-Driven Marketing",
-    backgroundImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=600&fit=crop&crop=faces",
+    backgroundImage: "/images/testimonials/testimonial-3.svg",
     description: "Every marketing campaign includes detailed analytics and performance tracking. See real results with full transparency on ROI and engagement metrics."
   },
   {
     id: 4,
     name: "Focused Grant Success",
-    backgroundImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=600&fit=crop&crop=faces",
+    backgroundImage: "/images/testimonials/testimonial-4.svg",
     description: "Target specific funding opportunities effortlessly with our grant consultancy expertise. We research, apply, and manage applications for maximum success rates."
   },
   {
     id: 5,
     name: "Seamless Communication",
-    backgroundImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=600&fit=crop&crop=faces",
+    backgroundImage: "/images/testimonials/testimonial-5.svg",
     description: "Transform your business communications into streamlined operations. From customer service to internal coordination, we make every interaction count."
   }
 ];
