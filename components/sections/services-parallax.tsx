@@ -154,47 +154,47 @@ export function ServicesParallax() {
     {
       title: "Business Support",
       link: "#business-support",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/grey%20hands.png",
+      thumbnail: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
     },
     {
       title: "Digital Marketing",
       link: "#digital-marketing",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/Rusha%20working.png",
+      thumbnail: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
     },
     {
       title: "Grant Consultancy",
       link: "#grant-consultancy",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/blue%20hands.png",
+      thumbnail: "https://images.unsplash.com/photo-1594736797933-d0fce9cf86a0?w=400&h=400&fit=crop",
     },
     {
       title: "Project Management",
       link: "#project-management",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/blue.png",
+      thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     },
     {
       title: "Customer Service",
       link: "#customer-service",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/green.png",
+      thumbnail: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop",
     },
     {
       title: "Social Media Management",
       link: "#social-media",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/grey.png",
+      thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop",
     },
     {
       title: "Content Creation",
       link: "#content-creation",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/mustard.png",
+      thumbnail: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=400&fit=crop",
     },
     {
       title: "SEO Optimization",
       link: "#seo",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/mustard%20hands.png",
+      thumbnail: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c0d3?w=400&h=400&fit=crop",
     },
     {
       title: "Email Marketing",
       link: "#email-marketing",
-      thumbnail: "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/green.png",
+      thumbnail: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=400&fit=crop",
     },
     {
       title: "Data Entry",

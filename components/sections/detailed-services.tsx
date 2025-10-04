@@ -182,7 +182,7 @@ const items = [
     id: 1,
     title: "Business Support",
     imgSrc:
-      "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/man%201.jpg",
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=600&fit=crop&crop=faces",
     description:
       "Comprehensive administrative support, data management, and project coordination. Streamline your operations and free up time for strategic growth with our expert UK-based team.",
   },
@@ -190,7 +190,7 @@ const items = [
     id: 2,
     title: "Digital Marketing",
     imgSrc:
-      "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/lady.jpg",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop&crop=faces",
     description:
       "Data-driven digital marketing strategies that build your brand and drive measurable results. From social media management to SEO optimization, we help you reach your target audience effectively.",
   },
@@ -198,7 +198,7 @@ const items = [
     id: 3,
     title: "Grant Consultancy",
     imgSrc:
-      "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/lady%203.jpg",
+      "https://images.unsplash.com/photo-1594736797933-d0fce9cf86a0?w=800&h=600&fit=crop&crop=faces",
     description:
       "Expert grant application and funding consultancy services. We help secure the capital needed for business expansion through comprehensive research, professional applications, and ongoing support.",
   },
@@ -206,7 +206,7 @@ const items = [
     id: 4,
     title: "Custom Solutions",
     imgSrc:
-      "https://raw.githubusercontent.com/samsites2000/rusha-va-landing/refs/heads/main/lady%202.jpg",
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=600&fit=crop&crop=faces",
     description:
       "Tailored virtual assistance solutions designed specifically for your unique business needs. From specialized workflows to industry-specific requirements, we create custom strategies for your success.",
   },
