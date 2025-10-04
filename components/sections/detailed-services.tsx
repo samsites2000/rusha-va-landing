@@ -181,7 +181,7 @@ const items = [
   {
     id: 1,
     title: "Business Support",
-    imgSrc: "/images/services/man 1.jpg",
+    imgSrc: "/images/services/man%201.jpg",
     description:
       "Comprehensive administrative support, data management, and project coordination. Streamline your operations and free up time for strategic growth with our expert UK-based team.",
   },
@@ -195,14 +195,14 @@ const items = [
   {
     id: 3,
     title: "Grant Consultancy",
-    imgSrc: "/images/services/lady 3.jpg",
+    imgSrc: "/images/services/lady%203.jpg",
     description:
       "Expert grant application and funding consultancy services. We help secure the capital needed for business expansion through comprehensive research, professional applications, and ongoing support.",
   },
   {
     id: 4,
     title: "Custom Solutions",
-    imgSrc: "/images/services/lady 2.jpg",
+    imgSrc: "/images/services/lady%202.jpg",
     description:
       "Tailored virtual assistance solutions designed specifically for your unique business needs. From specialized workflows to industry-specific requirements, we create custom strategies for your success.",
   },
