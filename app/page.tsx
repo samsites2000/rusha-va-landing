@@ -11,7 +11,7 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <VideoScrollHero
-        videoSrc="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        videoSrc="/videos/version2.mp4"
         enableAnimations={true}
         startScale={0.4}
       />

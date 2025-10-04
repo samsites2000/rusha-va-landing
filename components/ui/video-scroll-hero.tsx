@@ -11,7 +11,7 @@ interface VideoScrollHeroProps {
 }
 
 export function VideoScrollHero({
-  videoSrc = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  videoSrc = "https://private-user-images.githubusercontent.com/235835933/497423862-6a85c6c0-e9c3-4249-a966-c8f8633cdfea.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTk1Njc5MzgsIm5iZiI6MTc1OTU2NzYzOCwicGF0aCI6Ii8yMzU4MzU5MzMvNDk3NDIzODYyLTZhODVjNmMwLWU5YzMtNDI0OS1hOTY2LWM4Zjg2MzNjZGZlYS5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMDA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTAwNFQwODQ3MThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wZjlkZWZlMzdmZjgzNWUzYTNlNzRiODExODRkZjQxZDczYWRjYjVhNmUyZmM1YWMwY2E2Y2E1ZDMxYjAxNDg5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.DqEdtU0REEcIOJm4oi_D5tXaRMcP_yd1Y6quYFZ7KvU",
   enableAnimations = true,
   className = "",
   startScale = 0.25,
@@ -54,7 +54,7 @@ export function VideoScrollHero({
       {/* Hero Section with Video */}
       <div
         ref={containerRef}
-        className="relative h-[400vh] bg-background"
+        className="relative h-[400vh]"
       >
         {/* Fixed Video Container */}
         <div className="sticky top-0 w-full h-screen flex items-center justify-center z-10">
@@ -70,50 +70,12 @@ export function VideoScrollHero({
               loop
               muted
               playsInline
-              className="w-[60vw] h-[70vh] object-cover shadow-2xl rounded-2xl"
+              className="w-[60vw] h-[70vh] object-cover shadow-2xl rounded-2xl relative z-0"
             >
               <source src={videoSrc} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
-            {/* Video Overlay Content */}
-            <motion.div
-              className="absolute inset-0 bg-background/20 backdrop-blur-[1px] flex items-center justify-center rounded-2xl"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-            >
-              <div className="text-center text-white">
-                <motion.h1
-                  className="text-2xl md:text-4xl lg:text-6xl font-bold mb-4"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.8,
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 25,
-                  }}
-                >
-                  See Us in Action
-                </motion.h1>
-                <motion.p
-                  className="text-sm md:text-lg lg:text-xl text-white/80 max-w-2xl px-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 1.0,
-                    duration: 0.8,
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 25,
-                  }}
-                >
-                  Discover how Rusha VA transforms businesses through expert virtual assistance
-                </motion.p>
-              </div>
-            </motion.div>
           </div>
         </div>
       </div>

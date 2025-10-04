@@ -8,7 +8,7 @@ export function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="bg-gradient-to-b from-orange-50 to-orange-100">
+    <div className="relative bg-gradient-to-b from-orange-50 to-orange-100">
       <header>
         <div className="px-4 mx-auto sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
@@ -34,34 +34,6 @@ export function HeroSection() {
               )}
             </button>
 
-            <div className="hidden ml-auto lg:flex lg:items-center lg:justify-center lg:space-x-10">
-              <a href="#services" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80">
-                Services
-              </a>
-              <a href="#about" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80">
-                About
-              </a>
-              <a href="#contact" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80">
-                Contact
-              </a>
-              <a href="#pricing" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80">
-                Pricing
-              </a>
-
-              <div className="w-px h-5 bg-black/20"></div>
-
-              <a href="#contact" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80">
-                Get Quote
-              </a>
-              <a
-                href="#contact"
-                title=""
-                className="inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white transition-all duration-200 focus:bg-black focus:text-white"
-                role="button"
-              >
-                Start Free Trial
-              </a>
-            </div>
           </div>
         </div>
       </header>
@@ -96,16 +68,6 @@ export function HeroSection() {
                   Start exploring
                 </a>
 
-                <a
-                  href="#about"
-                  title=""
-                  className="inline-flex items-center mt-6 text-base font-semibold transition-all duration-200 sm:mt-0 hover:opacity-80"
-                >
-                  <div className="w-10 h-10 mr-3 flex items-center justify-center">
-                    <Play className="w-6 h-6 fill-orange-500 text-orange-500" />
-                  </div>
-                  Watch video
-                </a>
               </div>
             </motion.div>
 
@@ -116,13 +78,16 @@ export function HeroSection() {
             >
               <img
                 className="w-full"
-                src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/2/hero-img.png"
-                alt="Virtual Assistant Services"
+                src="/images/hero-professional.png"
+                alt="Rusha VA - Professional Virtual Assistant Services"
               />
             </motion.div>
           </div>
         </div>
       </section>
+
+      {/* White transparent gradient at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none"></div>
     </div>
   )
 }

@@ -52,7 +52,7 @@ export function Footer() {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h4 className="text-lg font-semibold mb-4 text-black">Connect With Us</h4>
+          <h4 className="text-lg font-semibold mb-4 text-black">Connect With Me</h4>
           <SocialLinks socials={socialData} className="justify-center" />
         </motion.div>
 
