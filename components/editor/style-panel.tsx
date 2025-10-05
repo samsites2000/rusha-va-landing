@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useVisualEditor } from './visual-editor-context'
-import { X, Palette, Type, Box, Layout } from 'lucide-react'
+import { X, Palette, Type, Box, Layout, ChevronUp, ChevronDown } from 'lucide-react'
 
 export function StylePanel() {
   const { selectedElement, setSelectedElement, addStyleUpdate } = useVisualEditor()
@@ -70,6 +70,34 @@ export function StylePanel() {
     return parseInt(cssValue) || 0
   }
 
+  const NumberInput = ({ value, onChange, placeholder }: { value: number, onChange: (val: number) => void, placeholder?: string }) => (
+    <div className="relative">
+      <input
+        type="number"
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChange(parseInt(e.target.value) || 0)}
+        className="w-full px-2 py-1 pr-6 border rounded text-sm"
+      />
+      <div className="absolute right-0 top-0 bottom-0 flex flex-col border-l">
+        <button
+          onClick={() => onChange(value + 1)}
+          className="flex-1 px-1 hover:bg-gray-100 text-gray-600"
+          type="button"
+        >
+          <ChevronUp className="w-3 h-3" />
+        </button>
+        <button
+          onClick={() => onChange(value - 1)}
+          className="flex-1 px-1 hover:bg-gray-100 text-gray-600 border-t"
+          type="button"
+        >
+          <ChevronDown className="w-3 h-3" />
+        </button>
+      </div>
+    </div>
+  )
+
   return (
     <div
       data-editor-ui
@@ -100,33 +128,25 @@ export function StylePanel() {
             <label className="block">
               <span className="text-xs text-gray-600">Padding</span>
               <div className="grid grid-cols-4 gap-2 mt-1">
-                <input
-                  type="number"
-                  placeholder="Top"
+                <NumberInput
                   value={parseValue(styles.paddingTop)}
-                  onChange={(e) => handleStyleChange('paddingTop', `${e.target.value}px`)}
-                  className="px-2 py-1 border rounded text-sm"
+                  onChange={(val) => handleStyleChange('paddingTop', `${val}px`)}
+                  placeholder="Top"
                 />
-                <input
-                  type="number"
-                  placeholder="Right"
+                <NumberInput
                   value={parseValue(styles.paddingRight)}
-                  onChange={(e) => handleStyleChange('paddingRight', `${e.target.value}px`)}
-                  className="px-2 py-1 border rounded text-sm"
+                  onChange={(val) => handleStyleChange('paddingRight', `${val}px`)}
+                  placeholder="Right"
                 />
-                <input
-                  type="number"
-                  placeholder="Bottom"
+                <NumberInput
                   value={parseValue(styles.paddingBottom)}
-                  onChange={(e) => handleStyleChange('paddingBottom', `${e.target.value}px`)}
-                  className="px-2 py-1 border rounded text-sm"
+                  onChange={(val) => handleStyleChange('paddingBottom', `${val}px`)}
+                  placeholder="Bottom"
                 />
-                <input
-                  type="number"
-                  placeholder="Left"
+                <NumberInput
                   value={parseValue(styles.paddingLeft)}
-                  onChange={(e) => handleStyleChange('paddingLeft', `${e.target.value}px`)}
-                  className="px-2 py-1 border rounded text-sm"
+                  onChange={(val) => handleStyleChange('paddingLeft', `${val}px`)}
+                  placeholder="Left"
                 />
               </div>
             </label>
@@ -134,19 +154,15 @@ export function StylePanel() {
             <label className="block">
               <span className="text-xs text-gray-600">Margin</span>
               <div className="grid grid-cols-2 gap-2 mt-1">
-                <input
-                  type="number"
-                  placeholder="Top"
+                <NumberInput
                   value={parseValue(styles.marginTop)}
-                  onChange={(e) => handleStyleChange('marginTop', `${e.target.value}px`)}
-                  className="px-2 py-1 border rounded text-sm"
+                  onChange={(val) => handleStyleChange('marginTop', `${val}px`)}
+                  placeholder="Top"
                 />
-                <input
-                  type="number"
-                  placeholder="Bottom"
+                <NumberInput
                   value={parseValue(styles.marginBottom)}
-                  onChange={(e) => handleStyleChange('marginBottom', `${e.target.value}px`)}
-                  className="px-2 py-1 border rounded text-sm"
+                  onChange={(val) => handleStyleChange('marginBottom', `${val}px`)}
+                  placeholder="Bottom"
                 />
               </div>
             </label>
@@ -163,12 +179,12 @@ export function StylePanel() {
           <div className="space-y-2">
             <label className="block">
               <span className="text-xs text-gray-600">Font Size (px)</span>
-              <input
-                type="number"
-                value={parseValue(styles.fontSize)}
-                onChange={(e) => handleStyleChange('fontSize', `${e.target.value}px`)}
-                className="w-full px-3 py-2 border rounded mt-1"
-              />
+              <div className="mt-1">
+                <NumberInput
+                  value={parseValue(styles.fontSize)}
+                  onChange={(val) => handleStyleChange('fontSize', `${val}px`)}
+                />
+              </div>
             </label>
 
             <label className="block">
