@@ -20,7 +20,7 @@ const ActionButton = ({ children }: { children: React.ReactNode }) => (
   <motion.button
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-    className="mt-8 px-8 py-3 rounded-full bg-red-500 text-white font-semibold shadow-lg transition-colors hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75"
+    className="mt-12 px-8 py-4 rounded-full bg-red-500 text-white font-semibold shadow-lg transition-colors hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75"
   >
     {children}
   </motion.button>
@@ -61,7 +61,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           <img
             src="/images/logo.png"
             alt="Rusha VA Logo"
-            className="h-20 w-auto md:h-24"
+            className="h-24 w-auto md:h-32"
           />
         </motion.div>
 
@@ -88,7 +88,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
               },
             },
           }}
-          className="text-3xl md:text-7xl font-bold tracking-tighter text-foreground"
+          className="text-3xl md:text-7xl font-bold tracking-tight leading-tight text-foreground"
         >
           {typeof title === 'string' ? (
             title.split(" ").map((word, i) => (
@@ -111,7 +111,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           animate="show"
           variants={FADE_IN_ANIMATION_VARIANTS}
           transition={{ delay: 0.5 }}
-          className="mt-6 max-w-xl text-lg text-muted-foreground"
+          className="mt-8 md:mt-12 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground"
         >
           {description}
         </motion.p>
@@ -128,7 +128,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
       </div>
 
       {/* Animated Image Marquee */}
-      <div className="absolute bottom-[-40px] md:bottom-0 left-0 w-full h-1/3 md:h-2/5 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] overflow-hidden">
         <motion.div
           className="flex gap-4"
           style={{ width: 'max-content' }}

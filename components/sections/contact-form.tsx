@@ -38,7 +38,7 @@ const contactInfo = [
 export function ContactForm() {
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 md:py-32 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Centered Vertical Marquee Section */}
         <div className="flex justify-center">

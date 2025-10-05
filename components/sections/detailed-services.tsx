@@ -40,13 +40,13 @@ export const DetailedServices = () => {
 
   return (
     <section className="p-4 bg-white text-black dark:bg-black dark:text-white w-full h-full">
-      <div className="max-w-6xl mx-auto mb-16">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 text-gray-900 dark:text-white">
             Detailed Service Breakdown
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Dive deep into our comprehensive service offerings and discover how we can transform your business
           </p>
         </div>

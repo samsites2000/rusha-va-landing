@@ -19,7 +19,7 @@ const socialData = [
 
 export function Footer() {
   return (
-    <footer className="bg-white text-black py-12">
+    <footer className="bg-white text-black py-16 md:py-24">
       <div className="container mx-auto px-4">
         {/* Social Links */}
         <motion.div

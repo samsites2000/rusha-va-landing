@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <div className="md:contents">
-        <div className="mb-32 md:mb-0">
+        <div className="mb-0">
           <AnimatedMarqueeHero
             tagline="Expert Virtual Assistant Services"
             title="Rusha VA Transforms Your Business"
