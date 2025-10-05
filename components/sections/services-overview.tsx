@@ -95,7 +95,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mb-8 px-4"
+        className="text-center mb-4 md:mb-8 px-4"
       >
         <h2 className="text-2xl md:text-4xl font-bold text-black mb-2">
           Our <span className="text-orange-500">Services</span>
@@ -108,15 +108,9 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
       {/* Background Image Container - Alone */}
       <section
         className={cn(
-          "relative min-h-[80vh] flex items-center justify-center py-8 px-4 overflow-hidden",
+          "relative min-h-[80vh] flex items-center justify-center py-8 px-4 overflow-hidden bg-white md:[background-image:url('https://raw.githubusercontent.com/samsites2000/video-assets/52d38d85f09054e07b82ef69470c796a5700b8b1/back.svg')] md:bg-cover md:bg-center md:bg-no-repeat",
           className
         )}
-        style={{
-          backgroundImage: `url('https://raw.githubusercontent.com/samsites2000/video-assets/52d38d85f09054e07b82ef69470c796a5700b8b1/back.svg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
       >
         {/* Light overlay for subtle contrast */}
         <div className="absolute inset-0 bg-black/10" />
