@@ -6,9 +6,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { MessageSquare, Check, Users, Calendar } from 'lucide-react';
 
-export interface ProfessionalHeroProps extends React.HTMLAttributes<HTMLDivElement> {
-  // Props interface for the professional hero component
-}
+export type ProfessionalHeroProps = React.HTMLAttributes<HTMLDivElement>
 
 const ProfessionalHero = React.forwardRef<HTMLDivElement, ProfessionalHeroProps>(
   ({ className, ...props }, ref) => {

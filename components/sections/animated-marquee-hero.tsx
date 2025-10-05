@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
-import { CursorProvider, Cursor, CursorFollow } from "@/components/ui/cursor";
+import { CursorProvider, CursorFollow } from "@/components/ui/cursor";
 
 // Props interface for the component
 interface AnimatedMarqueeHeroProps {
