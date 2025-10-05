@@ -1,12 +1,32 @@
 /* Visual Editor Styles - Auto-generated */
 
-.absolute {
-  margin-bottom: 0px;
-}
-
 @media (min-width: 768px) {
-  .absolute {
-    margin-bottom: -142px;
+  .text-2xl {
+    margin-top: 0px;
+  }
+
+  .text-center {
+    padding-top: 0px;
+    margin-bottom: 64px;
+    padding-right: 16px;
+    padding-bottom: 9px;
+    padding-left: 15px;
+    margin-top: 111px;
+  }
+
+  .text-base {
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 6px;
+  }
+
+  .flex {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
 }
