@@ -147,7 +147,24 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
 
       {/* Service Cards Grid - Outside container, below */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 pb-24 md:pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {/* Mobile: Stacked sticky cards */}
+        <div className="md:hidden">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className="sticky mb-8"
+              style={{
+                top: `${index * 20}px`,
+                zIndex: index
+              }}
+            >
+              <ServiceCard service={service} index={index} />
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: Grid layout */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
