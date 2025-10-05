@@ -75,8 +75,6 @@ export const TimelineContent = forwardRef<HTMLDivElement, TimelineContentProps>(
 
     return (
       <motion.div
-        // @ts-ignore - Component prop handling
-        as={Component}
         ref={ref}
         custom={animationNum}
         initial="hidden"
