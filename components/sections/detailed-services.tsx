@@ -5,23 +5,21 @@ import { AnimatePresence, motion } from "framer-motion";
 
 // Custom hook for window size
 function useWindowSize() {
-  const [windowSize, setWindowSize] = useState<{ width: number; height: number }>(() => {
-    if (typeof window !== 'undefined') {
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    }
-    return {
-      width: 0,
-      height: 0,
-    };
+  const [windowSize, setWindowSize] = useState<{ width: number; height: number }>({
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
     if (typeof window === 'undefined') {
       return;
     }
+
+    // Set initial size after mount
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
 
     const handleResize = () => {
       setWindowSize({
