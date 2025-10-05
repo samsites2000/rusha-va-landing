@@ -1,182 +1,128 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-
-// Custom hook for window size
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState<{ width: number; height: number }>({
-    width: 0,
-    height: 0,
-  });
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    // Set initial size after mount
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowSize;
-}
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const DetailedServices = () => {
-  const [open, setOpen] = useState(items[0].id);
+  const [activeService, setActiveService] = useState(0);
 
   return (
-    <section className="p-4 bg-white text-black dark:bg-black dark:text-white w-full h-full">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-24 md:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 text-gray-900 dark:text-white">
-            Detailed Service Breakdown
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-4">
+            Detailed Service <span className="text-orange-500">Breakdown</span>
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-black max-w-3xl mx-auto leading-relaxed">
             Dive deep into our comprehensive service offerings and discover how we can transform your business
           </p>
-        </div>
-      </div>
+        </motion.div>
 
-      <div className="flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-6xl mx-auto shadow overflow-hidden">
-        {items.map((item) => {
-          return (
-            <Panel
-              key={item.id}
-              open={open}
-              setOpen={setOpen}
-              id={item.id}
-              title={item.title}
-              imgSrc={item.imgSrc}
-              description={item.description}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {items.map((service, index) => (
+            <ServiceDetailCard
+              key={service.id}
+              service={service}
+              index={index}
+              isActive={activeService === index}
+              onClick={() => setActiveService(index)}
             />
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-interface PanelProps {
-  open: number;
-  setOpen: Dispatch<SetStateAction<number>>;
-  id: number;
-  title: string;
-  imgSrc: string;
-  description: string;
+interface ServiceDetailCardProps {
+  service: {
+    id: number;
+    title: string;
+    imgSrc: string;
+    description: string;
+    features: string[];
+  };
+  index: number;
+  isActive: boolean;
+  onClick: () => void;
 }
 
-const Panel = ({
-  open,
-  setOpen,
-  id,
-  title,
-  imgSrc,
-  description,
-}: PanelProps) => {
-  const { width } = useWindowSize();
-  const isOpen = open === id;
-
+const ServiceDetailCard = ({ service, index, isActive, onClick }: ServiceDetailCardProps) => {
   return (
-    <>
-      <button
-        className="bg-white hover:bg-gray-100 dark:bg-black dark:hover:bg-gray-900 transition-colors p-3 border-r-[1px] border-b-[1px] border-gray-200 dark:border-gray-800 flex flex-row-reverse lg:flex-col justify-end items-center gap-4 relative group"
-        onClick={() => setOpen(id)}
-      >
-        <span
-          style={{
-            writingMode: "vertical-lr",
-          }}
-          className="hidden lg:block text-xl font-light rotate-180 text-black dark:text-white"
-        >
-          {title}
-        </span>
-        <span className="block lg:hidden text-xl font-light text-black dark:text-white">{title}</span>
-        <span
-          className="w-4 h-4 bg-white group-hover:bg-gray-100 dark:bg-black dark:group-hover:bg-gray-900 transition-colors border-r-[1px] border-b-[1px] lg:border-b-0 lg:border-t-[1px] border-gray-200 dark:border-gray-800 rotate-45 absolute bottom-0 lg:bottom-[50%] right-[50%] lg:right-0 translate-y-[50%] translate-x-[50%] z-20"
-        />
-      </button>
-
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key={`panel-${id}`}
-            variants={width && width > 1024 ? panelVariants : panelVariantsSm}
-            initial="closed"
-            animate="open"
-            exit="closed"
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: "easeOut"
+      }}
+      viewport={{ once: true }}
+      className="group relative cursor-pointer"
+      onClick={onClick}
+    >
+      <div className="w-full overflow-hidden rounded-xl border-2 border-black hover:border-orange-500 transition-colors duration-300">
+        {/* Image Section */}
+        <div className="relative h-64 w-full overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
             style={{
-              backgroundImage: `url(${imgSrc})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
+              backgroundImage: `url('${service.imgSrc}')`,
             }}
-            className="w-full h-full overflow-hidden relative bg-black flex items-end"
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+          {/* Title Badge - Positioned on image */}
+          <div className="absolute top-4 left-4">
+            <span className="inline-block bg-orange-500 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
+              {service.title}
+            </span>
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="bg-white p-6">
+          <p className="text-black text-sm md:text-base leading-relaxed mb-4">
+            {service.description}
+          </p>
+
+          {/* Features List */}
+          <div className="space-y-2">
+            <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2">
+              Key Features:
+            </p>
+            <ul className="space-y-2">
+              {service.features.map((feature, idx) => (
+                <li key={idx} className="flex items-start text-sm text-black">
+                  <span className="inline-block w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 mr-2 flex-shrink-0" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Learn More Button */}
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-6 w-full px-6 py-3 rounded-full bg-black text-white font-semibold text-sm hover:bg-orange-500 transition-colors duration-300"
           >
-            {/* Gradient overlay matching testimonial cards */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
-
-            <motion.div
-              variants={descriptionVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="absolute bottom-0 left-0 right-0 px-6 py-4 z-10"
-            >
-              <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
-              <p className="text-white/90 text-sm leading-relaxed">{description}</p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+            Learn More
+          </motion.button>
+        </div>
+      </div>
+    </motion.div>
   );
-};
-
-const panelVariants = {
-  open: {
-    width: "100%",
-    height: "100%",
-  },
-  closed: {
-    width: "0%",
-    height: "100%",
-},
-};
-
-const panelVariantsSm = {
-  open: {
-    width: "100%",
-    height: "200px",
-  },
-  closed: {
-    width: "100%",
-    height: "0px",
-  },
-};
-
-const descriptionVariants = {
-  open: {
-    opacity: 1,
-    y: "0%",
-    transition: {
-      delay: 0.125,
-    },
-  },
-  closed: { opacity: 0, y: "100%" },
 };
 
 const items = [
@@ -186,6 +132,12 @@ const items = [
     imgSrc: "/images/services/man 1.jpg",
     description:
       "Comprehensive administrative support, data management, and project coordination. Streamline your operations and free up time for strategic growth with our expert UK-based team.",
+    features: [
+      "Calendar & email management",
+      "Data entry & CRM maintenance",
+      "Document preparation & formatting",
+      "Meeting coordination & minutes"
+    ]
   },
   {
     id: 2,
@@ -193,6 +145,12 @@ const items = [
     imgSrc: "/images/services/lady.jpg",
     description:
       "Data-driven digital marketing strategies that build your brand and drive measurable results. From social media management to SEO optimization, we help you reach your target audience effectively.",
+    features: [
+      "Social media content creation",
+      "SEO optimization & analytics",
+      "Email marketing campaigns",
+      "Brand strategy development"
+    ]
   },
   {
     id: 3,
@@ -200,6 +158,12 @@ const items = [
     imgSrc: "/images/services/lady%203.jpg",
     description:
       "Expert grant application and funding consultancy services. We help secure the capital needed for business expansion through comprehensive research, professional applications, and ongoing support.",
+    features: [
+      "Grant research & identification",
+      "Application writing & submission",
+      "Compliance & reporting support",
+      "Funding strategy consultation"
+    ]
   },
   {
     id: 4,
@@ -207,5 +171,11 @@ const items = [
     imgSrc: "/images/services/lady%202.jpg",
     description:
       "Tailored virtual assistance solutions designed specifically for your unique business needs. From specialized workflows to industry-specific requirements, we create custom strategies for your success.",
+    features: [
+      "Bespoke workflow design",
+      "Industry-specific solutions",
+      "Dedicated account management",
+      "Scalable support packages"
+    ]
   },
 ];
