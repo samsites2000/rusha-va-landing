@@ -185,7 +185,7 @@ const items = [
   {
     id: 1,
     title: "Business Support",
-    imgSrc: "/images/services/man%201.jpg",
+    imgSrc: "/images/services/man 1.jpg",
     description:
       "Comprehensive administrative support, data management, and project coordination. Streamline your operations and free up time for strategic growth with our expert UK-based team.",
   },

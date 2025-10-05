@@ -8,11 +8,14 @@ class Analytics {
   init() {
     if (typeof window === 'undefined' || this.initialized) return
 
+    // Disable PostHog in development if not configured
     const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
     const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST
 
-    if (!posthogKey) {
-      console.warn('PostHog key not found. Analytics disabled.')
+    if (!posthogKey || posthogKey === 'your_posthog_key_here') {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('PostHog disabled in development (not configured)')
+      }
       return
     }
 

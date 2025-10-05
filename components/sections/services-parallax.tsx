@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   motion,
   useScroll,
@@ -19,6 +19,7 @@ export const HeroParallax = ({
     thumbnail: string;
   }[];
 }) => {
+  const [isMounted, setIsMounted] = useState(false);
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const ref = React.useRef(null);
@@ -53,6 +54,47 @@ export const HeroParallax = ({
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <div className="h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto">
+        <Header />
+        <div className="">
+          <div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+            {firstRow.map((product) => (
+              <div key={product.title} className="h-96 w-[30rem] relative flex-shrink-0">
+                <Image
+                  src={product.thumbnail}
+                  height="600"
+                  width="600"
+                  className="object-cover object-left-top absolute h-full w-full inset-0"
+                  alt={product.title}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-row mb-20 space-x-20">
+            {secondRow.map((product) => (
+              <div key={product.title} className="h-96 w-[30rem] relative flex-shrink-0">
+                <Image
+                  src={product.thumbnail}
+                  height="600"
+                  width="600"
+                  className="object-cover object-left-top absolute h-full w-full inset-0"
+                  alt={product.title}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       ref={ref}
