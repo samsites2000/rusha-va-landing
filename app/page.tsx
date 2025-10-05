@@ -22,14 +22,18 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <AnimatedMarqueeHero
-        tagline="Expert Virtual Assistant Services"
-        title="Rusha VA Transforms Your Business"
-        description="From business support to digital marketing and grant consultancy, I provide comprehensive virtual assistant services that drive measurable growth for UK businesses."
-        ctaText="Get Started Today"
-        images={heroImages}
-      />
-      <ServicesOverview />
+      <div className="md:contents">
+        <div className="mb-32 md:mb-0">
+          <AnimatedMarqueeHero
+            tagline="Expert Virtual Assistant Services"
+            title="Rusha VA Transforms Your Business"
+            description="From business support to digital marketing and grant consultancy, I provide comprehensive virtual assistant services that drive measurable growth for UK businesses."
+            ctaText="Get Started Today"
+            images={heroImages}
+          />
+        </div>
+        <ServicesOverview />
+      </div>
       <VideoScrollHero
         videoSrc="/videos/version2.mp4"
         enableAnimations={true}
