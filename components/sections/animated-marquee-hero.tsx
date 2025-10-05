@@ -146,7 +146,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           {[...images, ...images].map((src, index) => (
             <div
               key={index}
-              className="relative aspect-[3/4] w-48 md:w-64 h-48 md:h-64 flex-shrink-0"
+              className="relative aspect-[3/4] w-48 md:w-64 flex-shrink-0"
               style={{
                 rotate: `${(index % 2 === 0 ? -2 : 5)}deg`,
               }}
