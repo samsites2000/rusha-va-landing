@@ -1,37 +1,12 @@
 /* Visual Editor Styles - Auto-generated */
-/*
- * DISABLED: These auto-generated styles were causing layout issues
- * with negative margins breaking vertical rhythm and section spacing
- *
- * All auto-generated styles have been commented out to prevent
- * layout conflicts with the Apple spacing system.
- */
 
-/*
+.absolute {
+  margin-bottom: 0px;
+}
+
 @media (min-width: 768px) {
-  .text-center {
-    margin-top: -76px;
-  }
-
   .absolute {
-    margin-top: 0px;
-    margin-bottom: -36px;
+    margin-bottom: -142px;
   }
 
-  .z-10 {
-    margin-bottom: 0px;
-    margin-top: 13px;
-  }
 }
-
-.text-center {
-  margin-bottom: 120px;
-  margin-top: -141px;
-  padding-right: 17px;
-}
-
-.text-2xl {
-  margin-bottom: 7px;
-  margin-top: -18px;
-}
-*/
