@@ -1,14 +1,14 @@
 'use client';
 
-import { forwardRef, ReactNode, useEffect, useRef, RefObject } from 'react';
+import React, { forwardRef, ReactNode, useEffect, useState } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface TimelineContentProps {
   children: ReactNode;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
   animationNum: number;
-  timelineRef: RefObject<HTMLElement>;
+  timelineRef: React.RefObject<HTMLElement | null>;
   customVariants?: any;
   className?: string;
   href?: string;
@@ -17,7 +17,7 @@ interface TimelineContentProps {
   onClick?: () => void;
 }
 
-export const TimelineContent = forwardRef<HTMLElement, TimelineContentProps>(
+export const TimelineContent = forwardRef<HTMLDivElement, TimelineContentProps>(
   ({
     children,
     as: Component = 'div',
@@ -27,9 +27,9 @@ export const TimelineContent = forwardRef<HTMLElement, TimelineContentProps>(
     className,
     ...props
   }, ref) => {
+    const [mounted, setMounted] = useState(false);
     const controls = useAnimation();
     const isInView = useInView(timelineRef, {
-      threshold: 0.1,
       once: true
     });
 
@@ -54,12 +54,24 @@ export const TimelineContent = forwardRef<HTMLElement, TimelineContentProps>(
     const variants = customVariants || defaultVariants;
 
     useEffect(() => {
-      if (isInView) {
+      setMounted(true);
+    }, []);
+
+    useEffect(() => {
+      if (mounted && isInView) {
         controls.start('visible');
-      } else {
+      } else if (mounted) {
         controls.start('hidden');
       }
-    }, [isInView, controls]);
+    }, [isInView, controls, mounted]);
+
+    if (!mounted) {
+      return (
+        <div className={cn(className)} {...props}>
+          {children}
+        </div>
+      );
+    }
 
     return (
       <motion.div

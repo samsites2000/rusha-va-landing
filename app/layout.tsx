@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Open_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { AnalyticsProvider } from '@/components/providers/analytics-provider'
 import './globals.css'
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
-  variable: '--font-open-sans',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -47,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={openSans.variable}>
-      <body className={openSans.className}>
+    <html lang="en" className={inter.variable}>
+      <body className={inter.className}>
         <AnalyticsProvider>
           {children}
         </AnalyticsProvider>

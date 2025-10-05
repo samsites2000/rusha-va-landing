@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @plugin 'tailwindcss-animate';
 
@@ -30,7 +30,7 @@
     --radius: 0.5rem;
 
     /* Custom variables */
-    --font-open-sans: 'Open Sans', sans-serif;
+    --font-inter: 'Inter', sans-serif;
   }
 
   .dark {
@@ -64,12 +64,12 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: var(--font-open-sans), sans-serif;
+    font-family: var(--font-inter), sans-serif;
   }
 
-  /* Typography Hierarchy - Open Sans ONLY */
+  /* Typography Hierarchy - Inter ONLY */
   h1 {
-    font-family: var(--font-open-sans);
+    font-family: var(--font-inter);
     font-size: 36px;
     font-weight: 600;
     line-height: 1.2;
@@ -79,7 +79,7 @@
   }
 
   h2 {
-    font-family: var(--font-open-sans);
+    font-family: var(--font-inter);
     font-size: 28px;
     font-weight: 600;
     line-height: 1.3;
@@ -89,7 +89,7 @@
   }
 
   h3 {
-    font-family: var(--font-open-sans);
+    font-family: var(--font-inter);
     font-size: 22px;
     font-weight: 600;
     line-height: 1.3;
@@ -98,14 +98,14 @@
   }
 
   p {
-    font-family: var(--font-open-sans);
+    font-family: var(--font-inter);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
   }
 
   small, .caption {
-    font-family: var(--font-open-sans);
+    font-family: var(--font-inter);
     font-size: 14px;
     font-weight: 300;
     line-height: 1.4;
