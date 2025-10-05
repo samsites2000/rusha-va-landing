@@ -108,18 +108,18 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
       {/* Background Image Container - Alone */}
       <section
         className={cn(
-          "relative min-h-[80vh] flex items-center justify-center py-8 px-4 overflow-hidden bg-white md:[background-image:url('https://raw.githubusercontent.com/samsites2000/video-assets/52d38d85f09054e07b82ef69470c796a5700b8b1/back.svg')] md:bg-cover md:bg-center md:bg-no-repeat",
+          "relative min-h-0 md:min-h-[80vh] flex items-center justify-center py-4 md:py-8 px-4 overflow-hidden bg-white md:[background-image:url('https://raw.githubusercontent.com/samsites2000/video-assets/52d38d85f09054e07b82ef69470c796a5700b8b1/back.svg')] md:bg-cover md:bg-center md:bg-no-repeat",
           className
         )}
       >
         {/* Light overlay for subtle contrast */}
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="hidden md:block absolute inset-0 bg-black/10" />
 
         {/* Top white gradient blend */}
-        <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-white via-white/80 via-white/40 to-transparent z-5" />
+        <div className="hidden md:block absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-white via-white/80 via-white/40 to-transparent z-5" />
 
         {/* Bottom white gradient blend */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 via-white/40 to-transparent z-5" />
+        <div className="hidden md:block absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 via-white/40 to-transparent z-5" />
 
         {/* Floating elements for visual interest */}
         <motion.div
