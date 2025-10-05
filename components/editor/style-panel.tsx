@@ -150,15 +150,15 @@ export function StylePanel() {
         </div>
       </div>
 
-      <div className="p-4 space-y-6">
+      <div className="p-4 space-y-8">
         {/* Spacing */}
         <div>
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-4">
             <Box className="w-4 h-4 text-gray-600" />
             <h4 className="font-semibold text-sm text-gray-700">Spacing</h4>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-4">
             <label className="block">
               <span className="text-xs text-gray-600">Padding</span>
               <div className="grid grid-cols-4 gap-2 mt-1">
@@ -205,12 +205,12 @@ export function StylePanel() {
 
         {/* Typography */}
         <div>
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-4">
             <Type className="w-4 h-4 text-gray-600" />
             <h4 className="font-semibold text-sm text-gray-700">Typography</h4>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-4">
             <label className="block">
               <span className="text-xs text-gray-600">Font Size (px)</span>
               <div className="mt-1">
@@ -240,12 +240,12 @@ export function StylePanel() {
 
         {/* Size */}
         <div>
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-4">
             <Layout className="w-4 h-4 text-gray-600" />
             <h4 className="font-semibold text-sm text-gray-700">Size</h4>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-3">
             <label className="block">
               <span className="text-xs text-gray-600">Width (px or %)</span>
               <input
