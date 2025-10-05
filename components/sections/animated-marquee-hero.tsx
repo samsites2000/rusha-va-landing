@@ -61,7 +61,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           <img
             src="/images/logo.png"
             alt="Rusha VA Logo"
-            className="h-16 w-auto md:h-20"
+            className="h-20 w-auto md:h-24"
           />
         </motion.div>
 
