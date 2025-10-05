@@ -128,7 +128,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
       </div>
 
       {/* Animated Image Marquee */}
-      <div className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 z-30 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] overflow-hidden">
         <motion.div
           className="flex gap-4"
           style={{ width: 'max-content' }}
