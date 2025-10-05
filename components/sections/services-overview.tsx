@@ -95,7 +95,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mb-4 md:mb-8 px-4"
+        className="text-center mb-4 md:mb-8 px-4 pt-16 md:pt-0"
       >
         <h2 className="text-2xl md:text-4xl font-bold text-black mb-2">
           Our <span className="text-orange-500">Services</span>
