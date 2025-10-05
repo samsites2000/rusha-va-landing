@@ -20,7 +20,6 @@ interface TimelineContentProps {
 export const TimelineContent = forwardRef<HTMLDivElement, TimelineContentProps>(
   ({
     children,
-    as: Component = 'div',
     animationNum,
     timelineRef,
     customVariants,
