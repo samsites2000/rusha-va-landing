@@ -1,13 +1,18 @@
 /* Visual Editor Styles - Auto-generated */
 
-.text-center {
-  margin-bottom: 120px;
-  margin-top: -141px;
-  padding-right: 17px;
-}
+@media (min-width: 768px) {
+  .text-center {
+    margin-top: -76px;
+  }
 
-.text-2xl {
-  margin-bottom: 7px;
-  margin-top: -18px;
-}
+  .absolute {
+    margin-top: 0px;
+    margin-bottom: -36px;
+  }
 
+  .z-10 {
+    margin-bottom: 0px;
+    margin-top: 13px;
+  }
+
+}
