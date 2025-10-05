@@ -118,7 +118,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
         {/* Bottom white gradient blend */}
         <div className="hidden md:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/40 to-transparent z-5" />
 
-        {/* Floating elements for visual interest */}
+        {/* Floating elements for visual interest - Desktop only */}
         <motion.div
           animate={{
             y: [-20, 20, -20],
@@ -129,7 +129,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-20 left-10 w-20 h-20 bg-orange-500/10 rounded-full blur-xl"
+          className="hidden md:block absolute top-20 left-10 w-20 h-20 bg-orange-500/10 rounded-full blur-xl"
         />
         <motion.div
           animate={{
@@ -141,7 +141,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute bottom-20 right-10 w-32 h-32 bg-red-500/10 rounded-full blur-xl"
+          className="hidden md:block absolute bottom-20 right-10 w-32 h-32 bg-red-500/10 rounded-full blur-xl"
         />
       </section>
 
