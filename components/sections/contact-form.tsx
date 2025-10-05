@@ -5,11 +5,7 @@ import {
   Mail,
   Phone,
   MapPin,
-  Clock,
-  CheckCircle,
-  Shield,
-  Award,
-  Zap
+  Clock
 } from 'lucide-react'
 
 const contactInfo = [

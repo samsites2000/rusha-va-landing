@@ -2,13 +2,6 @@
 
 import * as React from 'react';
 import { TestimonialCarousel, Testimonial } from '@/components/ui/testimonial-carousel';
-import {
-  HandIcon,
-  BarChart3Icon,
-  FileTextIcon,
-  HandshakeIcon,
-  MessageSquareIcon
-} from 'lucide-react';
 
 // Service testimonials data
 const serviceTestimonials: Testimonial[] = [

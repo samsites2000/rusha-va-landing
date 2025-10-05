@@ -21,7 +21,7 @@ class Analytics {
       person_profiles: 'identified_only',
       capture_pageview: false, // We'll manually capture pageviews
       capture_pageleave: true,
-      loaded: (posthog) => {
+      loaded: () => {
         if (process.env.NODE_ENV === 'development') {
           console.log('PostHog loaded in development mode')
         }

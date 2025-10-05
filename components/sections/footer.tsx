@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { SocialLinks } from '@/components/ui/social-links'
-import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
-
 const socialData = [
   {
     name: "LinkedIn",
@@ -18,27 +16,6 @@ const socialData = [
     image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
   }
 ]
-
-const footerLinks = {
-  services: [
-    { name: 'Business Support', href: '#business-support' },
-    { name: 'Digital Marketing', href: '#digital-marketing' },
-    { name: 'Grant Consultancy', href: '#grant-consultancy' },
-    { name: 'Consultation', href: '#contact' }
-  ],
-  company: [
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Story', href: '#story' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Case Studies', href: '#case-studies' }
-  ],
-  legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'GDPR Compliance', href: '/gdpr' }
-  ]
-}
 
 export function Footer() {
   return (
