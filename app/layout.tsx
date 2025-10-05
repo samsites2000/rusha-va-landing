@@ -6,6 +6,7 @@ import { EditorToolbar } from '@/components/editor/editor-toolbar'
 import { ElementSelector } from '@/components/editor/element-selector'
 import { StylePanel } from '@/components/editor/style-panel'
 import './globals.css'
+import './editor-styles.css'
 
 const inter = Inter({
   subsets: ['latin'],
