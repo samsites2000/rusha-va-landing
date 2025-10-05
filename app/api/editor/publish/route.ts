@@ -159,18 +159,39 @@ async function commitToGitHub(filePath: string, content: string) {
 }
 
 function generateCSSUpdates(updates: StyleUpdate[]): string {
-  const grouped = updates.reduce((acc, update) => {
-    if (!acc[update.selector]) {
-      acc[update.selector] = []
+  const mobileStyles: Record<string, string[]> = {}
+  const desktopStyles: Record<string, string[]> = {}
+
+  updates.forEach(update => {
+    // Check if property has media query prefix
+    if (update.property.startsWith('@media(md):')) {
+      const actualProperty = update.property.replace('@media(md):', '')
+      if (!desktopStyles[update.selector]) {
+        desktopStyles[update.selector] = []
+      }
+      desktopStyles[update.selector].push(`  ${camelToKebab(actualProperty)}: ${update.value};`)
+    } else {
+      if (!mobileStyles[update.selector]) {
+        mobileStyles[update.selector] = []
+      }
+      mobileStyles[update.selector].push(`  ${camelToKebab(update.property)}: ${update.value};`)
     }
-    acc[update.selector].push(`  ${camelToKebab(update.property)}: ${update.value};`)
-    return acc
-  }, {} as Record<string, string[]>)
+  })
 
   let css = '/* Visual Editor Styles - Auto-generated */\n\n'
 
-  for (const [selector, properties] of Object.entries(grouped)) {
+  // Mobile styles (default)
+  for (const [selector, properties] of Object.entries(mobileStyles)) {
     css += `${selector} {\n${properties.join('\n')}\n}\n\n`
+  }
+
+  // Desktop styles (media query)
+  if (Object.keys(desktopStyles).length > 0) {
+    css += '@media (min-width: 768px) {\n'
+    for (const [selector, properties] of Object.entries(desktopStyles)) {
+      css += `  ${selector} {\n${properties.map(p => '  ' + p).join('\n')}\n  }\n\n`
+    }
+    css += '}\n'
   }
 
   return css

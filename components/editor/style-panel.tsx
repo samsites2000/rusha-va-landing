@@ -2,10 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import { useVisualEditor } from './visual-editor-context'
-import { X, Palette, Type, Box, Layout, ChevronUp, ChevronDown } from 'lucide-react'
+import { X, Palette, Type, Box, Layout, ChevronUp, ChevronDown, Smartphone, Monitor } from 'lucide-react'
+
+type Breakpoint = 'mobile' | 'desktop'
 
 export function StylePanel() {
   const { selectedElement, setSelectedElement, addStyleUpdate } = useVisualEditor()
+  const [activeBreakpoint, setActiveBreakpoint] = useState<Breakpoint>('mobile')
   const [styles, setStyles] = useState({
     paddingTop: '',
     paddingBottom: '',
@@ -46,7 +49,7 @@ export function StylePanel() {
   if (!selectedElement) return null
 
   const handleStyleChange = (property: string, value: string) => {
-    // Update the element's inline style
+    // Update the element's inline style for preview
     selectedElement.style[property as any] = value
 
     // Update local state
@@ -59,9 +62,12 @@ export function StylePanel() {
       ? `.${selectedElement.className.split(' ')[0]}`
       : selectedElement.tagName.toLowerCase()
 
+    // Add breakpoint prefix for desktop styles
+    const finalProperty = activeBreakpoint === 'desktop' ? `@media(md):${property}` : property
+
     addStyleUpdate({
       selector,
-      property,
+      property: finalProperty,
       value
     })
   }
@@ -103,17 +109,45 @@ export function StylePanel() {
       data-editor-ui
       className="fixed top-20 right-6 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 z-[9999] max-h-[80vh] overflow-y-auto"
     >
-      <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Palette className="w-5 h-5 text-orange-500" />
-          <h3 className="font-semibold text-gray-900">Edit Styles</h3>
+      <div className="sticky top-0 bg-white border-b border-gray-200 p-4">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <Palette className="w-5 h-5 text-orange-500" />
+            <h3 className="font-semibold text-gray-900">Edit Styles</h3>
+          </div>
+          <button
+            onClick={() => setSelectedElement(null)}
+            className="p-1 hover:bg-gray-100 rounded"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
-        <button
-          onClick={() => setSelectedElement(null)}
-          className="p-1 hover:bg-gray-100 rounded"
-        >
-          <X className="w-5 h-5" />
-        </button>
+
+        {/* Breakpoint Selector */}
+        <div className="flex gap-2">
+          <button
+            onClick={() => setActiveBreakpoint('mobile')}
+            className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+              activeBreakpoint === 'mobile'
+                ? 'bg-orange-500 text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            <Smartphone className="w-4 h-4" />
+            Mobile
+          </button>
+          <button
+            onClick={() => setActiveBreakpoint('desktop')}
+            className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+              activeBreakpoint === 'desktop'
+                ? 'bg-orange-500 text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            <Monitor className="w-4 h-4" />
+            Desktop
+          </button>
+        </div>
       </div>
 
       <div className="p-4 space-y-6">
