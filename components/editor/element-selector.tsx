@@ -10,7 +10,20 @@ export function ElementSelector() {
   useEffect(() => {
     if (!isEditMode) {
       setHoveredElement(null)
+      // Restore default cursor when exiting edit mode
+      const styleEl = document.getElementById('editor-cursor-override')
+      if (styleEl) styleEl.remove()
+      document.body.style.cursor = ''
       return
+    }
+
+    // Force default cursor in edit mode (override custom cursor)
+    document.body.style.cursor = 'default'
+    if (!document.getElementById('editor-cursor-override')) {
+      const style = document.createElement('style')
+      style.id = 'editor-cursor-override'
+      style.textContent = '* { cursor: default !important; }'
+      document.head.appendChild(style)
     }
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -73,6 +86,11 @@ export function ElementSelector() {
       document.removeEventListener('mouseover', handleMouseOver)
       document.removeEventListener('mouseout', handleMouseOut)
       document.removeEventListener('click', handleClick, true)
+
+      // Clean up cursor override
+      const styleEl = document.getElementById('editor-cursor-override')
+      if (styleEl) styleEl.remove()
+      document.body.style.cursor = ''
     }
   }, [isEditMode, selectedElement, setSelectedElement])
 
