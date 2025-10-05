@@ -46,7 +46,14 @@ export function StylePanel() {
   if (!selectedElement) return null
 
   const handleStyleChange = (property: string, value: string) => {
+    // Update the element's inline style
     selectedElement.style[property as any] = value
+
+    // Update local state
+    setStyles(prev => ({
+      ...prev,
+      [property]: value
+    }))
 
     const selector = selectedElement.className
       ? `.${selectedElement.className.split(' ')[0]}`
