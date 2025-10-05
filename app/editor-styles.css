@@ -1,10 +1,23 @@
 /* Visual Editor Styles - Auto-generated */
 
-.absolute {
+.text-center {
   padding-top: 0px;
-  padding-bottom: 0px;
+  padding-right: 0px;
   padding-left: 0px;
+  margin-bottom: 98px;
+}
+
+.text-2xl {
   margin-top: 0px;
-  margin-bottom: -29px;
+  margin-bottom: 15px;
+  padding-left: 0px;
+}
+
+.relative {
+  margin-top: -99px;
+}
+
+.text-base {
+  padding-top: 0px;
 }
 
