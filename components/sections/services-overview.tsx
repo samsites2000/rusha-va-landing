@@ -112,6 +112,11 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
           className
         )}
       >
+        {/* Top white gradient blend */}
+        <div className="hidden md:block absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/40 to-transparent z-5" />
+
+        {/* Bottom white gradient blend */}
+        <div className="hidden md:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/40 to-transparent z-5" />
 
         {/* Floating elements for visual interest */}
         <motion.div
