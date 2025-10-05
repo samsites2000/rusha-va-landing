@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { AnalyticsProvider } from '@/components/providers/analytics-provider'
+import { VisualEditorProvider } from '@/components/editor/visual-editor-context'
+import { EditorToolbar } from '@/components/editor/editor-toolbar'
+import { ElementSelector } from '@/components/editor/element-selector'
+import { StylePanel } from '@/components/editor/style-panel'
 import './globals.css'
 
 const inter = Inter({
@@ -50,7 +54,12 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className={inter.className}>
         <AnalyticsProvider>
-          {children}
+          <VisualEditorProvider>
+            {children}
+            <EditorToolbar />
+            <ElementSelector />
+            <StylePanel />
+          </VisualEditorProvider>
         </AnalyticsProvider>
       </body>
     </html>
