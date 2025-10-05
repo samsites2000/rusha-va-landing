@@ -49,7 +49,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           className
         )}
       >
-      <div className="z-10 flex flex-col items-center pt-4 md:pt-6">
+      <div className="z-10 flex flex-col items-center pt-4 md:pt-6 pb-[40vh] md:pb-[45vh]">
         {/* Logo */}
         <motion.div
           initial="hidden"
