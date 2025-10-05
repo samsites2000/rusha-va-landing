@@ -14,14 +14,6 @@ interface StyleUpdate {
 
 export async function POST(request: NextRequest) {
   try {
-    // Only allow in development
-    if (process.env.NODE_ENV !== 'development') {
-      return NextResponse.json(
-        { error: 'Editor only available in development' },
-        { status: 403 }
-      )
-    }
-
     const { updates }: { updates: StyleUpdate[] } = await request.json()
 
     if (!updates || updates.length === 0) {
