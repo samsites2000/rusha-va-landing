@@ -16,17 +16,21 @@ export function ElementSelector() {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement
 
-      // Ignore editor UI elements
+      // Ignore editor UI elements and navigation
       if (
         target.closest('[data-editor-ui]') ||
         target.closest('button') ||
-        target.tagName === 'BUTTON'
+        target.closest('nav') ||
+        target.closest('header') ||
+        target.tagName === 'BUTTON' ||
+        target.tagName === 'HTML' ||
+        target.tagName === 'BODY'
       ) {
         return
       }
 
-      // Find the closest section or editable container
-      const editableEl = target.closest('section, [data-editable]') as HTMLElement
+      // Allow selecting any element with meaningful content
+      const editableEl = target.closest('div, section, p, h1, h2, h3, h4, h5, h6, span, a, [data-editable]') as HTMLElement
       if (editableEl && editableEl !== selectedElement) {
         setHoveredElement(editableEl)
       }
@@ -39,16 +43,20 @@ export function ElementSelector() {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
 
-      // Ignore editor UI elements
+      // Ignore editor UI elements and navigation
       if (
         target.closest('[data-editor-ui]') ||
         target.closest('button') ||
-        target.tagName === 'BUTTON'
+        target.closest('nav') ||
+        target.closest('header') ||
+        target.tagName === 'BUTTON' ||
+        target.tagName === 'HTML' ||
+        target.tagName === 'BODY'
       ) {
         return
       }
 
-      const editableEl = target.closest('section, [data-editable]') as HTMLElement
+      const editableEl = target.closest('div, section, p, h1, h2, h3, h4, h5, h6, span, a, [data-editable]') as HTMLElement
       if (editableEl) {
         e.preventDefault()
         e.stopPropagation()
