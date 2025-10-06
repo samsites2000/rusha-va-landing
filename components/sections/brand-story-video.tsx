@@ -20,27 +20,27 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 const serviceTestimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Business Support",
-    backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_53AM.png?raw=true",
-    description: "Comprehensive administrative support that transforms your daily operations"
-  },
-  {
-    id: 2,
-    name: "Digital Marketing",
-    backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_52AM.png?raw=true",
-    description: "Data-driven marketing strategies that deliver real, measurable growth"
-  },
-  {
-    id: 3,
     name: "Grant Consultancy",
     backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_51AM.png?raw=true",
     description: "Expert grant application services that unlock funding opportunities"
   },
   {
-    id: 4,
+    id: 2,
     name: "Custom Solutions",
     backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_50AM.png?raw=true",
     description: "Tailored virtual assistance designed for your unique business needs"
+  },
+  {
+    id: 3,
+    name: "Business Support",
+    backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_53AM.png?raw=true",
+    description: "Comprehensive administrative support that transforms your daily operations"
+  },
+  {
+    id: 4,
+    name: "Digital Marketing",
+    backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_52AM.png?raw=true",
+    description: "Data-driven marketing strategies that deliver real, measurable growth"
   }
 ];
 

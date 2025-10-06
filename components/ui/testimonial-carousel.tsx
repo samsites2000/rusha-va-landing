@@ -28,6 +28,7 @@ const TestimonialCarousel = React.forwardRef<
   ) => {
     const [currentIndex, setCurrentIndex] = React.useState(0)
     const [exitX, setExitX] = React.useState<number>(0)
+    const [swipeDirection, setSwipeDirection] = React.useState<'left' | 'right' | null>(null)
 
     const handleDragEnd = (
       event: MouseEvent | TouchEvent | PointerEvent,
@@ -35,6 +36,14 @@ const TestimonialCarousel = React.forwardRef<
     ) => {
       if (Math.abs(info.offset.x) > 100) {
         setExitX(info.offset.x)
+
+        // Set swipe direction for feedback
+        if (info.offset.x < 0) {
+          setSwipeDirection('left')
+        } else {
+          setSwipeDirection('right')
+        }
+
         setTimeout(() => {
           if (info.offset.x < 0) {
             // Swiped left - go to next card
@@ -44,6 +53,7 @@ const TestimonialCarousel = React.forwardRef<
             setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
           }
           setExitX(0)
+          setSwipeDirection(null)
         }, 200)
       }
     }
@@ -114,6 +124,39 @@ const TestimonialCarousel = React.forwardRef<
                     <span className="text-2xl select-none cursor-pointer text-gray-300 hover:text-gray-400">
                       &rarr;
                     </span>
+                  </div>
+                )}
+
+                {/* Swipe feedback icons */}
+                {isCurrentCard && swipeDirection && (
+                  <motion.div
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
+                    className="absolute top-4 right-4 z-10"
+                  >
+                    {swipeDirection === 'right' ? (
+                      <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center">
+                        <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                    ) : (
+                      <div className="w-16 h-16 rounded-full bg-gray-400 flex items-center justify-center">
+                        <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M20 12H4" />
+                        </svg>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+
+                {/* "Swipe to see more" text on first card */}
+                {isCurrentCard && currentIndex === 0 && (
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-black/70 px-6 py-3 rounded-full">
+                    <p className="text-white text-sm font-semibold whitespace-nowrap">
+                      👉 Swipe to see more
+                    </p>
                   </div>
                 )}
 
