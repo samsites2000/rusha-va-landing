@@ -44,11 +44,32 @@ export function Navigation() {
       const offset = 80 // Account for fixed navbar height
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
+      const startPosition = window.pageYOffset
+      const distance = offsetPosition - startPosition
+      const duration = 1000 // 1 second duration for smooth scroll
+      let startTime: number | null = null
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
+      // Easing function for smooth deceleration
+      const easeInOutCubic = (t: number): number => {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2
+      }
+
+      const animation = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime
+        const timeElapsed = currentTime - startTime
+        const progress = Math.min(timeElapsed / duration, 1)
+        const ease = easeInOutCubic(progress)
+
+        window.scrollTo(0, startPosition + distance * ease)
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation)
+        }
+      }
+
+      requestAnimationFrame(animation)
     }
   }
 
