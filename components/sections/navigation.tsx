@@ -89,9 +89,7 @@ export function Navigation() {
                 className={`text-sm font-semibold transition-colors ${
                   activeSection === link.href.replace('#', '')
                     ? 'text-orange-500'
-                    : isScrolled
-                    ? 'text-gray-900 hover:text-orange-500'
-                    : 'text-white hover:text-orange-500'
+                    : 'text-black hover:text-orange-500'
                 }`}
               >
                 {link.name}
@@ -142,9 +140,7 @@ function MobileMenu({
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`p-2 rounded-lg transition-colors ${
-          isScrolled ? 'text-gray-900' : 'text-white'
-        }`}
+        className="p-2 rounded-lg transition-colors text-black"
       >
         <svg
           className="w-6 h-6"
