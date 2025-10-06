@@ -27,7 +27,7 @@ const scrollingCredits = [
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white py-8 md:py-6">
+    <footer className="bg-black text-white pt-12 md:pt-16 pb-4 md:pb-4">
       <div className="container mx-auto px-4">
         {/* Get in Touch Section with Scrolling Credits */}
         <motion.div
@@ -35,17 +35,17 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-6 md:mb-8"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
             Get in <span className="text-orange-500">Touch</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed mb-4">
+          <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed mb-6 md:mb-8">
             Ready to transform your business? Let's discuss how my virtual assistant services can help you achieve your goals.
           </p>
 
           {/* Vertical Scrolling Credits */}
-          <div className="relative h-[120px] md:h-[100px] flex items-center justify-center overflow-hidden rounded-lg mb-4">
+          <div className="relative h-[180px] md:h-[200px] flex items-center justify-center overflow-hidden rounded-lg mb-6 md:mb-8">
             <div className="relative w-full h-full">
               <div
                 className="group flex flex-col overflow-hidden h-full"
@@ -96,9 +96,9 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-2"
+          className="text-center mb-3 md:mb-4"
         >
-          <h4 className="text-sm md:text-base font-semibold mb-2 text-white">Connect With Me</h4>
+          <h4 className="text-sm md:text-base font-semibold mb-3 text-white">Connect With Me</h4>
           <SocialLinks socials={socialData} className="justify-center" />
         </motion.div>
 
@@ -108,7 +108,7 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center pb-2"
         >
           <p className="text-sm text-gray-400">&copy; 2024 Rusha VA. All rights reserved.</p>
         </motion.div>
