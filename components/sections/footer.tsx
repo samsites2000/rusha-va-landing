@@ -113,7 +113,7 @@ export function Footer() {
           <img
             src="https://raw.githubusercontent.com/samsites2000/rusha-va-landing/eaa4c7ea737e4cbb016b25ff34edc4efbdb58aa9/white%20rusha.svg"
             alt="Rusha VA"
-            className="h-8 w-auto opacity-80"
+            className="h-16 w-auto opacity-80"
           />
         </motion.div>
 
