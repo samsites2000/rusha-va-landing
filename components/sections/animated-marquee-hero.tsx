@@ -45,11 +45,11 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
     <CursorProvider>
       <section
         className={cn(
-          "relative w-full h-screen overflow-hidden bg-background flex flex-col items-center text-center px-4",
+          "relative w-full h-screen md:h-auto overflow-hidden md:overflow-visible bg-background flex flex-col items-center text-center px-4",
           className
         )}
       >
-      <div className="z-10 flex flex-col items-center pt-4 md:pt-6 pb-[40vh] md:pb-[60vh]">
+      <div className="z-10 flex flex-col items-center pt-4 md:pt-6 pb-[40vh] md:pb-16">
         {/* Logo */}
         <motion.div
           initial="hidden"
@@ -127,8 +127,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         </motion.div>
       </div>
 
-      {/* Animated Image Marquee */}
-      <div className="absolute bottom-0 left-0 w-full h-1/3 md:h-2/5 z-30 overflow-hidden">
+      {/* Animated Image Marquee - Mobile only (inside hero) */}
+      <div className="md:hidden absolute bottom-0 left-0 w-full h-1/3 z-30 overflow-hidden">
         <motion.div
           className="flex gap-4"
           style={{ width: 'max-content' }}
@@ -146,7 +146,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           {[...images, ...images].map((src, index) => (
             <div
               key={index}
-              className="relative aspect-[3/4] w-48 md:w-64 flex-shrink-0"
+              className="relative aspect-[3/4] w-48 flex-shrink-0"
               style={{
                 rotate: `${(index % 2 === 0 ? -2 : 5)}deg`,
               }}
@@ -170,6 +170,40 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         Virtual Assistant
       </CursorFollow>
       </section>
+
+      {/* Animated Image Marquee - Desktop only (separate container) */}
+      <div className="hidden md:block w-full py-16 overflow-hidden bg-background">
+        <motion.div
+          className="flex gap-4"
+          style={{ width: 'max-content' }}
+          animate={{
+            x: [0, -(256 + 16) * images.length], // Move exactly one set: (image_width + gap) * number_of_images
+          }}
+          transition={{
+            x: {
+              ease: "linear",
+              duration: images.length * 3, // 3 seconds per image
+              repeat: Infinity,
+            },
+          }}
+        >
+          {[...images, ...images].map((src, index) => (
+            <div
+              key={index}
+              className="relative aspect-[3/4] w-64 flex-shrink-0"
+              style={{
+                rotate: `${(index % 2 === 0 ? -2 : 5)}deg`,
+              }}
+            >
+              <img
+                src={src}
+                alt={`Showcase image ${index + 1}`}
+                className="w-full h-full object-cover rounded-2xl shadow-md"
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </CursorProvider>
   );
 };
