@@ -184,16 +184,16 @@ export function BrandStoryVideo() {
     <div className="bg-white dark:bg-gray-900 font-sans">
       <div className="px-[5%]">
         <div className="max-w-7xl mx-auto">
-          <section className="py-24 md:py-48">
+          <section className="py-24 md:py-32">
             {/* Section Title */}
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16">
               Let's get to <span className="text-orange-500">work</span>
             </h2>
 
-            {/* Two column layout - mobile stacked, desktop side-by-side */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-              {/* Left Column - Testimonial Carousel */}
-              <div className="w-full h-[300px] md:h-[900px]">
+            {/* Mobile: Stacked layout, Desktop: Centered cursor only */}
+            <div className="flex flex-col md:flex-row md:justify-center items-center gap-8">
+              {/* Testimonial Carousel - Mobile only */}
+              <div className="w-full h-[300px] md:hidden">
                 <TestimonialCarousel
                   testimonials={serviceTestimonials}
                   showArrows={false}
@@ -202,8 +202,8 @@ export function BrandStoryVideo() {
                 />
               </div>
 
-              {/* Right Column - Cursor Animation */}
-              <div className="w-full h-[400px] md:h-[900px] rounded-2xl overflow-hidden shadow-lg">
+              {/* Cursor Animation - Mobile full width, Desktop centered with reduced height */}
+              <div className="w-full md:w-[600px] h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
                 <CursorAnimation />
               </div>
             </div>
