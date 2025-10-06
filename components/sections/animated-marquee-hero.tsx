@@ -20,7 +20,7 @@ const ActionButton = ({ children }: { children: React.ReactNode }) => (
   <motion.button
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-    className="mt-12 px-8 py-4 rounded-full bg-red-500 text-white font-semibold shadow-lg transition-colors hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75"
+    className="mt-12 px-8 py-4 rounded-full bg-orange-500 text-white font-semibold shadow-lg transition-colors hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75"
   >
     {children}
   </motion.button>
@@ -49,28 +49,13 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           className
         )}
       >
-      <div className="z-10 flex flex-col items-center pt-4 md:pt-6 pb-[40vh] md:pb-16">
-        {/* Logo */}
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={FADE_IN_ANIMATION_VARIANTS}
-          transition={{ delay: 0 }}
-          className="mb-6"
-        >
-          <img
-            src="/images/logo.png"
-            alt="Rusha VA Logo"
-            className="h-24 w-auto md:h-32"
-          />
-        </motion.div>
-
+      <div className="z-10 flex flex-col items-center pt-24 md:pt-32 pb-[40vh] md:pb-16">
         {/* Tagline */}
         <motion.div
           initial="hidden"
           animate="show"
           variants={FADE_IN_ANIMATION_VARIANTS}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: 0 }}
           className="mb-4 inline-block rounded-full border border-border bg-card/50 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur-sm"
         >
           {tagline}
