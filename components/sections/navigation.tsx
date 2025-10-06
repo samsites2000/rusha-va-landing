@@ -39,6 +39,38 @@ export function Navigation() {
 
   const scrollToSection = (href: string) => {
     const sectionId = href.replace('#', '')
+
+    // Special handling for home - scroll to top
+    if (sectionId === 'home') {
+      const startPosition = window.pageYOffset
+      const distance = -startPosition // Distance to top
+      const duration = 1000
+      let startTime: number | null = null
+
+      const easeInOutCubic = (t: number): number => {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2
+      }
+
+      const animation = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime
+        const timeElapsed = currentTime - startTime
+        const progress = Math.min(timeElapsed / duration, 1)
+        const ease = easeInOutCubic(progress)
+
+        window.scrollTo(0, startPosition + distance * ease)
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation)
+        }
+      }
+
+      requestAnimationFrame(animation)
+      return
+    }
+
+    // For other sections
     const element = document.getElementById(sectionId)
     if (element) {
       const offset = 80 // Account for fixed navbar height
