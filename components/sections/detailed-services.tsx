@@ -85,11 +85,12 @@ const ServiceDetailCard = ({ service, index }: ServiceDetailCardProps) => {
           {service.description}
         </p>
 
-        {/* CTA Button - Left aligned, 50% width */}
+        {/* CTA Button - Fixed size 224x84 */}
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-1/2 px-4 py-2 rounded-2xl bg-black text-white font-semibold text-sm hover:bg-orange-500 transition-all duration-300"
+          className="px-4 py-2 rounded-lg bg-black text-white font-semibold text-sm hover:bg-orange-500 transition-all duration-300"
+          style={{ width: '224px', height: '84px' }}
         >
           Learn More
         </motion.button>
