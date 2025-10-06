@@ -15,7 +15,7 @@ export function Cursor({ className, style, children, ...props }: CursorProps) {
   );
 }
 
-export function CursorPointer({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+export function CursorPointer({ className, ...props }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       className={cn('w-5 h-5', className)}
