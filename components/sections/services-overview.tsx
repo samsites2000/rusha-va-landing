@@ -154,7 +154,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
               key={service.title}
               className="sticky mb-8"
               style={{
-                top: `${index * 20}px`,
+                top: '0px',
                 zIndex: index
               }}
             >

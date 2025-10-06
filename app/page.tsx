@@ -1,3 +1,4 @@
+import { Navigation } from '@/components/sections/navigation'
 import { AnimatedMarqueeHero } from '@/components/sections/animated-marquee-hero'
 import { ServicesOverview } from '@/components/sections/services-overview'
 import { VideoScrollHero } from '@/components/ui/video-scroll-hero'
@@ -20,7 +21,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <div className="md:contents">
+      <Navigation />
+      <div id="home" className="md:contents">
         <div className="mb-0">
           <AnimatedMarqueeHero
             tagline="Expert Virtual Assistant Services"
@@ -30,16 +32,22 @@ export default function Home() {
             images={heroImages}
           />
         </div>
-        <ServicesOverview />
+        <div id="services">
+          <ServicesOverview />
+        </div>
       </div>
-      <VideoScrollHero
-        videoSrc="/videos/version2.mp4"
-        enableAnimations={true}
-        startScale={0.4}
-      />
-      <DetailedServices />
-      <BrandStoryVideo />
-      <Footer />
+      <div id="about">
+        <VideoScrollHero
+          videoSrc="/videos/version2.mp4"
+          enableAnimations={true}
+          startScale={0.4}
+        />
+        <DetailedServices />
+        <BrandStoryVideo />
+      </div>
+      <div id="contact">
+        <Footer />
+      </div>
     </main>
   )
 }
