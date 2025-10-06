@@ -60,10 +60,11 @@ const ServiceDetailCard = ({ service, index }: ServiceDetailCardProps) => {
         ease: "easeOut"
       }}
       viewport={{ once: true }}
-      className="group relative bg-white overflow-hidden"
+      className="group relative bg-white border border-gray-300 rounded-lg overflow-hidden max-w-[540px] mx-auto"
+      style={{ height: '399px' }}
     >
-      {/* Image Section - with subtle rounded corners */}
-      <div className="relative h-72 md:h-80 w-full overflow-hidden rounded-lg">
+      {/* Image Section */}
+      <div className="relative h-[200px] w-full overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
           style={{
@@ -73,24 +74,24 @@ const ServiceDetailCard = ({ service, index }: ServiceDetailCardProps) => {
       </div>
 
       {/* Content Section */}
-      <div className="pt-6 md:pt-8 pb-2">
+      <div className="p-4 flex flex-col h-[199px]">
         {/* Title */}
-        <h3 className="text-3xl md:text-4xl font-bold text-black mb-4 md:mb-6">
+        <h3 className="text-lg font-bold text-black mb-2">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">
+        <p className="text-sm text-gray-600 leading-tight mb-4 flex-grow">
           {service.description}
         </p>
 
-        {/* CTA Button - Sharp rounded corners, black bg */}
+        {/* CTA Button - Left aligned, 50% width */}
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full px-6 py-4 rounded-2xl bg-black text-white font-semibold text-base md:text-lg hover:bg-orange-500 transition-all duration-300"
+          className="w-1/2 px-4 py-2 rounded-2xl bg-black text-white font-semibold text-sm hover:bg-orange-500 transition-all duration-300"
         >
-          Learn More About {service.title}
+          Learn More
         </motion.button>
       </div>
     </motion.div>
@@ -101,7 +102,7 @@ const items = [
   {
     id: 1,
     title: "Business Support",
-    imgSrc: "/images/services/man 1.jpg",
+    imgSrc: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_33AM.png?raw=true",
     description:
       "Give yourself the gift of streamlined operations and productive workflows. Comprehensive administrative support that transforms your daily business tasks into smooth, efficient processes.",
     features: [
@@ -114,7 +115,7 @@ const items = [
   {
     id: 2,
     title: "Digital Marketing",
-    imgSrc: "/images/services/lady.jpg",
+    imgSrc: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_30AM.png?raw=true",
     description:
       "Give your brand the visibility it deserves. Data-driven digital marketing strategies that connect you with your audience and deliver real, measurable growth for your business.",
     features: [
@@ -127,7 +128,7 @@ const items = [
   {
     id: 3,
     title: "Grant Consultancy",
-    imgSrc: "/images/services/lady%203.jpg",
+    imgSrc: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_29AM.png?raw=true",
     description:
       "Give your business the financial foundation for growth. Expert grant application services that unlock funding opportunities and secure the capital you need to expand.",
     features: [
@@ -140,7 +141,7 @@ const items = [
   {
     id: 4,
     title: "Custom Solutions",
-    imgSrc: "/images/services/lady%202.jpg",
+    imgSrc: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_27AM.png?raw=true",
     description:
       "Give your unique business needs the attention they deserve. Tailored virtual assistance solutions designed specifically for your industry, your workflow, and your success.",
     features: [
