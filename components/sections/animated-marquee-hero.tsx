@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
 import { CursorProvider, CursorFollow } from "@/components/ui/cursor";
+import FallingText from "@/components/ui/shadcn-io/falling-text";
 
 // Props interface for the component
 interface AnimatedMarqueeHeroProps {
@@ -62,33 +63,18 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         </motion.div>
 
         {/* Main Title */}
-        <motion.h1
-          initial="hidden"
-          animate="show"
-          variants={{
-            hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
-          className="text-3xl md:text-7xl font-bold tracking-tight leading-tight text-foreground"
-        >
-          {typeof title === 'string' ? (
-            title.split(" ").map((word, i) => (
-              <motion.span
-                key={i}
-                variants={FADE_IN_ANIMATION_VARIANTS}
-                className="inline-block"
-              >
-                {word}&nbsp;
-              </motion.span>
-            ))
-          ) : (
-            title
-          )}
-        </motion.h1>
+        <div className="text-3xl md:text-7xl font-bold tracking-tight leading-tight text-foreground h-32 md:h-40">
+          <FallingText
+            text={typeof title === 'string' ? title : 'Rusha VA Transforms Your Business'}
+            highlightWords={["Rusha", "VA"]}
+            trigger="hover"
+            backgroundColor="transparent"
+            wireframes={false}
+            gravity={0.5}
+            fontSize="clamp(1.875rem, 5vw, 4.5rem)"
+            mouseConstraintStiffness={0.7}
+          />
+        </div>
 
         {/* Description */}
         <motion.p
