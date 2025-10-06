@@ -3,7 +3,6 @@ import { ServicesOverview } from '@/components/sections/services-overview'
 import { VideoScrollHero } from '@/components/ui/video-scroll-hero'
 import { BrandStoryVideo } from '@/components/sections/brand-story-video'
 import { DetailedServices } from '@/components/sections/detailed-services'
-import { ContactForm } from '@/components/sections/contact-form'
 import { Footer } from '@/components/sections/footer'
 
 export default function Home() {
@@ -40,7 +39,6 @@ export default function Home() {
       />
       <DetailedServices />
       <BrandStoryVideo />
-      <ContactForm />
       <Footer />
     </main>
   )

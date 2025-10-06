@@ -27,7 +27,7 @@ const scrollingCredits = [
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white py-16 md:py-24">
+    <footer className="bg-black text-white py-12 md:py-16">
       <div className="container mx-auto px-4">
         {/* Get in Touch Section with Scrolling Credits */}
         <motion.div
@@ -35,17 +35,17 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-8 md:mb-10"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             Get in <span className="text-orange-500">Touch</span>
           </h2>
-          <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed mb-6">
             Ready to transform your business? Let's discuss how my virtual assistant services can help you achieve your goals.
           </p>
 
           {/* Vertical Scrolling Credits */}
-          <div className="relative h-[200px] md:h-[250px] flex items-center justify-center overflow-hidden rounded-lg mb-8">
+          <div className="relative h-[140px] md:h-[150px] flex items-center justify-center overflow-hidden rounded-lg mb-6">
             <div className="relative w-full h-full">
               <div
                 className="group flex flex-col overflow-hidden h-full"
@@ -96,9 +96,9 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-6"
         >
-          <h4 className="text-sm md:text-base font-semibold mb-4 text-white">Connect With Me</h4>
+          <h4 className="text-sm md:text-base font-semibold mb-3 text-white">Connect With Me</h4>
           <SocialLinks socials={socialData} className="justify-center" />
         </motion.div>
 
