@@ -60,10 +60,10 @@ const ServiceDetailCard = ({ service, index }: ServiceDetailCardProps) => {
         ease: "easeOut"
       }}
       viewport={{ once: true }}
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+      className="group relative bg-white overflow-hidden"
     >
-      {/* Image Section */}
-      <div className="relative h-72 md:h-80 w-full overflow-hidden">
+      {/* Image Section - with subtle rounded corners */}
+      <div className="relative h-72 md:h-80 w-full overflow-hidden rounded-lg">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
           style={{
@@ -73,22 +73,22 @@ const ServiceDetailCard = ({ service, index }: ServiceDetailCardProps) => {
       </div>
 
       {/* Content Section */}
-      <div className="p-6 md:p-8">
+      <div className="pt-6 md:pt-8 pb-2">
         {/* Title */}
-        <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
+        <h3 className="text-3xl md:text-4xl font-bold text-black mb-4 md:mb-6">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+        <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">
           {service.description}
         </p>
 
-        {/* CTA Button */}
+        {/* CTA Button - Sharp rounded corners, black bg */}
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full px-6 py-4 rounded-xl bg-black text-white font-semibold text-base hover:bg-orange-500 transition-all duration-300 shadow-md"
+          className="w-full px-6 py-4 rounded-2xl bg-black text-white font-semibold text-base md:text-lg hover:bg-orange-500 transition-all duration-300"
         >
           Learn More About {service.title}
         </motion.button>
