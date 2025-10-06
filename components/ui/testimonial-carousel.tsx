@@ -162,7 +162,7 @@ const TestimonialCarousel = React.forwardRef<
                   className={cn(
                     "w-2 h-2 rounded-full transition-colors",
                     index === currentIndex
-                      ? "bg-blue-500"
+                      ? "bg-orange-500"
                       : "bg-gray-300",
                   )}
                 />

@@ -10,6 +10,7 @@ import {
   CursorName,
   CursorPointer,
 } from '@/components/ui/shadcn-io/cursor';
+import { CursorProvider, CursorFollow } from '@/components/ui/cursor';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -19,33 +20,27 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 const serviceTestimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Swipe to see how we can help you",
-    backgroundImage: "/images/testimonials/lee.jpg",
-    description: "Discover our comprehensive virtual assistant services tailored to your business needs"
+    name: "Business Support",
+    backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_53AM.png?raw=true",
+    description: "Comprehensive administrative support that transforms your daily operations"
   },
   {
     id: 2,
-    name: "Expert Business Support",
-    backgroundImage: "/images/testimonials/auntie.jpg",
-    description: "Comprehensive administrative support, data management, and project coordination in real time. Every task handled with precision by our UK-based team."
+    name: "Digital Marketing",
+    backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_52AM.png?raw=true",
+    description: "Data-driven marketing strategies that deliver real, measurable growth"
   },
   {
     id: 3,
-    name: "Data-Driven Marketing",
-    backgroundImage: "/images/testimonials/john.jpg",
-    description: "Every marketing campaign includes detailed analytics and performance tracking. See real results with full transparency on ROI and engagement metrics."
+    name: "Grant Consultancy",
+    backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_51AM.png?raw=true",
+    description: "Expert grant application services that unlock funding opportunities"
   },
   {
     id: 4,
-    name: "Focused Grant Success",
-    backgroundImage: "/images/testimonials/random.jpg",
-    description: "Target specific funding opportunities effortlessly with our grant consultancy expertise. We research, apply, and manage applications for maximum success rates."
-  },
-  {
-    id: 5,
-    name: "Seamless Communication",
-    backgroundImage: "/images/testimonials/tony.jpg",
-    description: "Transform your business communications into streamlined operations. From customer service to internal coordination, we make every interaction count."
+    name: "Custom Solutions",
+    backgroundImage: "https://github.com/samsites2000/rusha-va-landing/blob/main/Generated%20Image%20October%2006,%202025%20-%204_50AM.png?raw=true",
+    description: "Tailored virtual assistance designed for your unique business needs"
   }
 ];
 
@@ -181,35 +176,46 @@ function CursorAnimation() {
 
 export function BrandStoryVideo() {
   return (
-    <div className="bg-white dark:bg-gray-900 font-sans">
-      <div className="px-[5%]">
-        <div className="max-w-7xl mx-auto">
-          <section className="py-24 md:py-32">
-            {/* Section Title */}
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16">
-              Let's get to <span className="text-orange-500">work</span>
-            </h2>
+    <CursorProvider>
+      <div className="bg-white dark:bg-gray-900 font-sans">
+        <div className="px-[5%]">
+          <div className="max-w-7xl mx-auto">
+            <section className="py-24 md:py-32">
+              {/* Section Title */}
+              <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16">
+                Let's get to <span className="text-orange-500">work</span>
+              </h2>
 
-            {/* Mobile: Stacked layout, Desktop: Centered cursor only */}
-            <div className="flex flex-col md:flex-row md:justify-center items-center gap-8">
-              {/* Testimonial Carousel - Mobile only */}
-              <div className="w-full h-[300px] md:hidden">
-                <TestimonialCarousel
-                  testimonials={serviceTestimonials}
-                  showArrows={false}
-                  showDots={true}
-                  className="w-full h-full"
-                />
+              {/* Mobile: Stacked layout, Desktop: Centered cursor only */}
+              <div className="flex flex-col md:flex-row md:justify-center items-center gap-8">
+                {/* Testimonial Carousel - Mobile only */}
+                <div className="w-full h-[300px] md:hidden">
+                  <TestimonialCarousel
+                    testimonials={serviceTestimonials}
+                    showArrows={false}
+                    showDots={true}
+                    className="w-full h-full"
+                  />
+                </div>
+
+                {/* Cursor Animation - Mobile full width, Desktop centered with reduced height */}
+                <div className="w-full md:w-[600px] h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
+                  <CursorAnimation />
+                </div>
               </div>
 
-              {/* Cursor Animation - Mobile full width, Desktop centered with reduced height */}
-              <div className="w-full md:w-[600px] h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
-                <CursorAnimation />
-              </div>
-            </div>
-          </section>
+              {/* Custom Orange Cursor - Desktop only */}
+              <CursorFollow
+                align="bottom-right"
+                sideOffset={20}
+                className="hidden md:block px-3 py-1 bg-orange-500 text-white text-sm font-medium rounded-full shadow-lg"
+              >
+                Virtual Assistant
+              </CursorFollow>
+            </section>
+          </div>
         </div>
       </div>
-    </div>
+    </CursorProvider>
   );
 }
