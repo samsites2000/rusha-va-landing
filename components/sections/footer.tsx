@@ -27,7 +27,7 @@ const scrollingCredits = [
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white py-8 md:py-12">
+    <footer className="bg-black text-white py-8 md:py-6">
       <div className="container mx-auto px-4">
         {/* Get in Touch Section with Scrolling Credits */}
         <motion.div
@@ -96,7 +96,7 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-4"
+          className="text-center mb-2"
         >
           <h4 className="text-sm md:text-base font-semibold mb-2 text-white">Connect With Me</h4>
           <SocialLinks socials={socialData} className="justify-center" />
