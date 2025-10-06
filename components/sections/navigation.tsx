@@ -72,7 +72,7 @@ export function Navigation() {
             onClick={() => scrollToSection('#home')}
           >
             <img
-              src="/images/logo.png"
+              src="https://raw.githubusercontent.com/samsites2000/rusha-va-landing/519c5ea4c11f76266565f78bd7e7b8d76a05edde/rusha%20black.svg"
               alt="Rusha VA Logo"
               className="h-12 w-auto"
             />

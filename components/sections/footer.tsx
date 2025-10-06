@@ -102,6 +102,21 @@ export function Footer() {
           <SocialLinks socials={socialData} className="justify-center" />
         </motion.div>
 
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-4"
+        >
+          <img
+            src="https://raw.githubusercontent.com/samsites2000/rusha-va-landing/eaa4c7ea737e4cbb016b25ff34edc4efbdb58aa9/white%20rusha.svg"
+            alt="Rusha VA"
+            className="h-8 w-auto opacity-80"
+          />
+        </motion.div>
+
         {/* Copyright */}
         <motion.div
           initial={{ opacity: 0 }}

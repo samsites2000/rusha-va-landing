@@ -39,7 +39,7 @@ const serviceTestimonials: Testimonial[] = [
 
 export function BrandStoryVideo() {
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 font-sans">
+    <div className="bg-white dark:bg-gray-900 font-sans">
       <div className="px-[5%]">
         <div className="max-w-7xl mx-auto">
           <section className="py-24 md:py-48 flex flex-col items-center">
