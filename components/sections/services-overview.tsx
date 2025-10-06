@@ -98,7 +98,7 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className })
         className="text-center mb-6 md:mb-16 px-4 pt-24 md:pt-32"
       >
         <h2 className="text-2xl md:text-4xl font-bold text-black mb-2">
-          Our <span className="text-orange-500">Services</span>
+          My <span className="text-orange-500">Services</span>
         </h2>
         <p className="text-base text-black max-w-2xl leading-relaxed mx-auto">
           Comprehensive virtual assistant services tailored to drive your business growth

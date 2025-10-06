@@ -84,7 +84,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           animate="show"
           variants={FADE_IN_ANIMATION_VARIANTS}
           transition={{ delay: 0.5 }}
-          className="mt-8 md:mt-12 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground"
+          className="mt-8 md:mt-12 max-w-xl text-base md:text-lg leading-relaxed text-black opacity-100"
+          style={{ color: '#000000' }}
         >
           {description}
         </motion.p>

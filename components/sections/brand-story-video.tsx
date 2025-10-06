@@ -143,16 +143,6 @@ function CursorAnimation() {
 
   return (
     <div className="relative w-full h-full bg-[radial-gradient(#f97316_1px,transparent_1px)]" style={{ backgroundSize: '16px 16px' }}>
-      <div className="absolute top-8 right-8">
-        <AvatarGroup variant="stack" animate size={32}>
-          {usersWithPositions.map((user) => (
-            <Avatar key={user.id}>
-              <AvatarImage className="mt-0 mb-0" src={user.avatar} />
-              <AvatarFallback>{user.name.slice(0, 2)}</AvatarFallback>
-            </Avatar>
-          ))}
-        </AvatarGroup>
-      </div>
       {usersWithPositions.map((user, index) => (
         <Cursor
           className="absolute transition-all duration-1000"
@@ -173,13 +163,11 @@ function CursorAnimation() {
             )}
           >
             <div className="flex items-center gap-2 !opacity-100">
-              <Image
-                alt={user.name}
-                className="mt-0 mb-0 size-4 rounded-full"
-                height={16}
-                src={user.avatar}
-                unoptimized
-                width={16}
+              <div
+                className="size-4 rounded-full"
+                style={{
+                  backgroundColor: index === 0 ? '#f97316' : index === 1 ? '#3b82f6' : '#ef4444'
+                }}
               />
               <CursorName>{user.name}</CursorName>
             </div>
@@ -197,20 +185,25 @@ export function BrandStoryVideo() {
       <div className="px-[5%]">
         <div className="max-w-7xl mx-auto">
           <section className="py-24 md:py-48">
+            {/* Section Title */}
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16">
+              Let's get to <span className="text-orange-500">work</span>
+            </h2>
+
             {/* Two column layout - mobile stacked, desktop side-by-side */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
               {/* Left Column - Testimonial Carousel */}
-              <div className="w-full">
+              <div className="w-full h-[300px] md:h-[900px]">
                 <TestimonialCarousel
                   testimonials={serviceTestimonials}
                   showArrows={false}
                   showDots={true}
-                  className="w-full"
+                  className="w-full h-full"
                 />
               </div>
 
               {/* Right Column - Cursor Animation */}
-              <div className="w-full h-[400px] md:h-[600px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="w-full h-[400px] md:h-[900px] rounded-2xl overflow-hidden shadow-lg">
                 <CursorAnimation />
               </div>
             </div>
