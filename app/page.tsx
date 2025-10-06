@@ -1,7 +1,6 @@
 import { AnimatedMarqueeHero } from '@/components/sections/animated-marquee-hero'
 import { ServicesOverview } from '@/components/sections/services-overview'
 import { VideoScrollHero } from '@/components/ui/video-scroll-hero'
-import { ServicesParallax } from '@/components/sections/services-parallax'
 import { BrandStoryVideo } from '@/components/sections/brand-story-video'
 import { DetailedServices } from '@/components/sections/detailed-services'
 import { ContactForm } from '@/components/sections/contact-form'
@@ -39,7 +38,6 @@ export default function Home() {
         enableAnimations={true}
         startScale={0.4}
       />
-      <ServicesParallax />
       <DetailedServices />
       <BrandStoryVideo />
       <ContactForm />
