@@ -122,17 +122,19 @@ export function Navigation() {
   )
 }
 
+interface MobileMenuProps {
+  navLinks: Array<{ name: string; href: string }>
+  activeSection: string
+  scrollToSection: (href: string) => void
+  isScrolled: boolean
+}
+
 function MobileMenu({
   navLinks,
   activeSection,
   scrollToSection,
   isScrolled
-}: {
-  navLinks: typeof navLinks
-  activeSection: string
-  scrollToSection: (href: string) => void
-  isScrolled: boolean
-}) {
+}: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
