@@ -69,11 +69,11 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           variants={FADE_IN_ANIMATION_VARIANTS}
           className="text-3xl md:text-7xl font-bold tracking-tight leading-tight text-foreground"
         >
-          <span className="text-orange-500">Rusha VA</span>{' '}
+          <span>Rusha VA</span>{' '}
           <FlipWords
             words={['Transforms', 'Elevates', 'Empowers', 'Streamlines']}
             duration={2500}
-            className="text-orange-500 font-bold"
+            className="text-orange-500 font-bold text-3xl md:text-7xl"
           />{' '}
           Your Business
         </motion.h1>
