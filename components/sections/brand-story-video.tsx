@@ -184,7 +184,7 @@ export function BrandStoryVideo() {
     <div className="bg-white dark:bg-gray-900 font-sans">
       <div className="px-[5%]">
         <div className="max-w-7xl mx-auto">
-          <section className="py-24 md:py-32">
+          <section className="py-12 md:py-20">
             {/* Section Title */}
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 md:mb-16">
               Let's get to <span className="text-orange-500">work</span>
