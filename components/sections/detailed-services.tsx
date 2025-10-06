@@ -1,12 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export const DetailedServices = () => {
-  const [activeService, setActiveService] = useState(0);
-
   return (
     <section className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -27,14 +24,12 @@ export const DetailedServices = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {items.map((service, index) => (
             <ServiceDetailCard
               key={service.id}
               service={service}
               index={index}
-              isActive={activeService === index}
-              onClick={() => setActiveService(index)}
             />
           ))}
         </div>
@@ -52,11 +47,9 @@ interface ServiceDetailCardProps {
     features: string[];
   };
   index: number;
-  isActive: boolean;
-  onClick: () => void;
 }
 
-const ServiceDetailCard = ({ service, index, isActive, onClick }: ServiceDetailCardProps) => {
+const ServiceDetailCard = ({ service, index }: ServiceDetailCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -67,59 +60,38 @@ const ServiceDetailCard = ({ service, index, isActive, onClick }: ServiceDetailC
         ease: "easeOut"
       }}
       viewport={{ once: true }}
-      className="group relative cursor-pointer"
-      onClick={onClick}
+      className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
     >
-      <div className="w-full overflow-hidden rounded-xl border-2 border-black hover:border-orange-500 transition-colors duration-300">
-        {/* Image Section */}
-        <div className="relative h-64 w-full overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-            style={{
-              backgroundImage: `url('${service.imgSrc}')`,
-            }}
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      {/* Image Section */}
+      <div className="relative h-72 md:h-80 w-full overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+          style={{
+            backgroundImage: `url('${service.imgSrc}')`,
+          }}
+        />
+      </div>
 
-          {/* Title Badge - Positioned on image */}
-          <div className="absolute top-4 left-4">
-            <span className="inline-block bg-orange-500 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
-              {service.title}
-            </span>
-          </div>
-        </div>
+      {/* Content Section */}
+      <div className="p-6 md:p-8">
+        {/* Title */}
+        <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
+          {service.title}
+        </h3>
 
-        {/* Content Section */}
-        <div className="bg-white p-6">
-          <p className="text-black text-sm md:text-base leading-relaxed mb-4">
-            {service.description}
-          </p>
+        {/* Description */}
+        <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          {service.description}
+        </p>
 
-          {/* Features List */}
-          <div className="space-y-2">
-            <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2">
-              Key Features:
-            </p>
-            <ul className="space-y-2">
-              {service.features.map((feature, idx) => (
-                <li key={idx} className="flex items-start text-sm text-black">
-                  <span className="inline-block w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 mr-2 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Learn More Button */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="mt-6 w-full px-6 py-3 rounded-full bg-black text-white font-semibold text-sm hover:bg-orange-500 transition-colors duration-300"
-          >
-            Learn More
-          </motion.button>
-        </div>
+        {/* CTA Button */}
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full px-6 py-4 rounded-xl bg-black text-white font-semibold text-base hover:bg-orange-500 transition-all duration-300 shadow-md"
+        >
+          Learn More About {service.title}
+        </motion.button>
       </div>
     </motion.div>
   );
@@ -131,7 +103,7 @@ const items = [
     title: "Business Support",
     imgSrc: "/images/services/man 1.jpg",
     description:
-      "Comprehensive administrative support, data management, and project coordination. Streamline your operations and free up time for strategic growth with our expert UK-based team.",
+      "Give yourself the gift of streamlined operations and productive workflows. Comprehensive administrative support that transforms your daily business tasks into smooth, efficient processes.",
     features: [
       "Calendar & email management",
       "Data entry & CRM maintenance",
@@ -144,7 +116,7 @@ const items = [
     title: "Digital Marketing",
     imgSrc: "/images/services/lady.jpg",
     description:
-      "Data-driven digital marketing strategies that build your brand and drive measurable results. From social media management to SEO optimization, we help you reach your target audience effectively.",
+      "Give your brand the visibility it deserves. Data-driven digital marketing strategies that connect you with your audience and deliver real, measurable growth for your business.",
     features: [
       "Social media content creation",
       "SEO optimization & analytics",
@@ -157,7 +129,7 @@ const items = [
     title: "Grant Consultancy",
     imgSrc: "/images/services/lady%203.jpg",
     description:
-      "Expert grant application and funding consultancy services. We help secure the capital needed for business expansion through comprehensive research, professional applications, and ongoing support.",
+      "Give your business the financial foundation for growth. Expert grant application services that unlock funding opportunities and secure the capital you need to expand.",
     features: [
       "Grant research & identification",
       "Application writing & submission",
@@ -170,7 +142,7 @@ const items = [
     title: "Custom Solutions",
     imgSrc: "/images/services/lady%202.jpg",
     description:
-      "Tailored virtual assistance solutions designed specifically for your unique business needs. From specialized workflows to industry-specific requirements, we create custom strategies for your success.",
+      "Give your unique business needs the attention they deserve. Tailored virtual assistance solutions designed specifically for your industry, your workflow, and your success.",
     features: [
       "Bespoke workflow design",
       "Industry-specific solutions",
