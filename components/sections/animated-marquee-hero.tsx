@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils"; // Assuming you have a `cn` utility from shadcn
 import { CursorProvider, CursorFollow } from "@/components/ui/cursor";
-import FallingText from "@/components/ui/shadcn-io/falling-text";
+import { FlipWords } from "@/components/ui/shadcn-io/flip-words";
 
 // Props interface for the component
 interface AnimatedMarqueeHeroProps {
@@ -66,32 +66,16 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         <motion.h1
           initial="hidden"
           animate="show"
-          variants={{
-            hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
+          variants={FADE_IN_ANIMATION_VARIANTS}
           className="text-3xl md:text-7xl font-bold tracking-tight leading-tight text-foreground"
         >
-          {typeof title === 'string' ? (
-            title.split(" ").map((word, i) => {
-              const isRushaOrVA = word === 'Rusha' || word === 'VA';
-              return (
-                <motion.span
-                  key={i}
-                  variants={FADE_IN_ANIMATION_VARIANTS}
-                  className={`inline-block ${isRushaOrVA ? 'text-orange-500' : ''}`}
-                >
-                  {word}&nbsp;
-                </motion.span>
-              );
-            })
-          ) : (
-            title
-          )}
+          <span className="text-orange-500">Rusha VA</span>{' '}
+          <FlipWords
+            words={['Transforms', 'Elevates', 'Empowers', 'Streamlines']}
+            duration={2500}
+            className="text-orange-500 font-bold"
+          />{' '}
+          Your Business
         </motion.h1>
 
         {/* Description */}
