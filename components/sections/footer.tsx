@@ -9,24 +9,20 @@ const socialData = [
     image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
   },
   {
-    name: "Twitter",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg"
-  },
-  {
     name: "Instagram",
     image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
   }
 ]
 
 const scrollingCredits = [
-  'Virtual Assistant Services',
-  'Business Support',
-  'Digital Marketing',
-  'Grant Consultancy',
-  'UK Based',
-  'Professional Excellence',
-  'Trusted Partner',
-  'Growth Focused'
+  'hello@rushava.co.uk',
+  'support@rushava.co.uk',
+  '+44 20 7123 4567',
+  'Mon-Fri 9AM-6PM GMT',
+  'London, United Kingdom',
+  'Remote services available',
+  '< 2 hours response',
+  '24/7 emergency support'
 ]
 
 export function Footer() {
